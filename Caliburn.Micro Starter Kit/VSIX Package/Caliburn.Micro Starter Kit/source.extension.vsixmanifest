@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+    <Metadata>
+        <Identity Id="Caliburn.Micro_Starter_Kit.6d602094-7185-49c9-ada0-e05b6da18191" Version="1.0" Language="en-US" Publisher="Anu Viswan" />
+        <DisplayName>Caliburn.Micro.StarterKit</DisplayName>
+        <Description xml:space="preserve">Caliburn.Micro Starter Kit for Developer comprising of Project templates with 
+1. MEF IoC
+2. SimpleContainer IoC
+
+The package also contains useful Code Snippets</Description>
+        <Icon>Logo.png</Icon>
+        <PreviewImage>Logo.png</PreviewImage>
+        <Tags>Caliburn.Micro , MEF , SimpleContainer , Starter Kit , MVVM</Tags>
+    </Metadata>
+    <Installation>
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0]" />
+    </Installation>
+    <Dependencies>
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+    </Dependencies>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" d:TargetPath="ProjectTemplates\Caliburn.Micro WPF App with MEF.zip" />
+        <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" d:TargetPath="ProjectTemplates\Caliburn.Micro WPF App with SimpleContainer.zip" />
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="File" Path="Caliburn.Micro.Snippets.pkgdef" />
+    </Assets>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,16.0)" DisplayName="Visual Studio core editor" />
+    </Prerequisites>
+</PackageManifest>
