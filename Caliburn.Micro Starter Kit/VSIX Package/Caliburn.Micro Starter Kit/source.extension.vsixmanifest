@@ -2,12 +2,12 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
         <Identity Id="Caliburn.Micro_Starter_Kit.6d602094-7185-49c9-ada0-e05b6da18191" Version="1.0" Language="en-US" Publisher="Anu Viswan" />
-        <DisplayName>Caliburn.Micro.StarterKit</DisplayName>
-        <Description xml:space="preserve">Caliburn.Micro Starter Kit for WPF provides Project Templates with MEF/SimpleContainer as IoC.The package also contains Code Snippets designed for developing with Caliburn.Micro</Description>
+        <DisplayName>Caliburn.Micro Template Pack for WPF</DisplayName>
+        <Description xml:space="preserve">Caliburn.Micro Template Pack for WPF provides a Collection of Project Templates and Code Snippets for developing WPF application with Caliburn.Micro</Description>
         <MoreInfo>https://github.com/anuviswan/VisualStudioExtensions/tree/master/Caliburn.Micro%20Starter%20Kit</MoreInfo>
         <Icon>Logo.png</Icon>
         <PreviewImage>Logo.png</PreviewImage>
-        <Tags>Caliburn.Micro , MEF , SimpleContainer , Starter Kit , MVVM</Tags>
+        <Tags>Caliburn.Micro , MEF , SimpleContainer , Starter Kit , MVVM, Template Pack</Tags>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0]" />
