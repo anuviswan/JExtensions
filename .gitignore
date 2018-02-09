@@ -259,3 +259,4 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/Caliburn.Micro Template Pack/Extension Project/ItemTemplates/Bootstrapper.MEF
