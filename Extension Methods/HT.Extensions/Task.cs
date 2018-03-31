@@ -8,6 +8,12 @@ namespace HT.Extensions
 {
     public static class Task
     {
+        /// <summary>
+        /// Wait for First 'N' Tasks to be completed
+        /// </summary>
+        /// <param name="tasks">Array of Tasks</param>
+        /// <param name="numberOfTasks">Number of tasks to wait for completion</param>
+        /// <returns>Indices of tasks completed from original array </returns>
         public static int[] WaitForFirstN(this System.Threading.Tasks.Task[] tasks,int numberOfTasks)
         {
             
