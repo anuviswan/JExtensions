@@ -38,7 +38,7 @@ namespace HT.Extensions.UnitTest
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void WaitForFirstN_OutOfRangeCount_ThrowException()
         {
-            var completedTaskList = tasks.WaitForFirstN(10);            
+            var completedTaskList = tasks.WaitForFirstN(10);
         }
     }
 }
