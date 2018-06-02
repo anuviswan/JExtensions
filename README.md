@@ -1,6 +1,6 @@
 # Visual Studio Extensions
 
-This contains Visual Studio Extensions, including Project Templates and Code Snippet
+This contains Visual Studio Extensions
 
 1. Caliburn.Micro Template Pack
 
