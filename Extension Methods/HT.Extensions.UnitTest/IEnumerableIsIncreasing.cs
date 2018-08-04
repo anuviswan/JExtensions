@@ -41,5 +41,38 @@ namespace HT.Extensions.UnitTest
             var result = collection.IsIncreasing();
             Assert.IsFalse(result);
         }
+
+
+        [TestMethod]
+        public void IsIncreasing_TestWithIncreasingCharCollection_ReturnTrue()
+        {
+            var collection = new[] { 'a', 'b','c','d','e','f' };
+            var result = collection.IsIncreasing();
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void IsIncreasing_TestWithNonIncreasingCharCollection_ReturnFalse()
+        {
+            var collection = new[] { 'a', 'c', 'b',  'e', 'd', 'f' };
+            var result = collection.IsIncreasing();
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void IsIncreasing_TestWithEqualValueCharCollection_ReturnFalse()
+        {
+            var collection = new[] { 'a','a','a','a' };
+            var result = collection.IsIncreasing();
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void IsIncreasing_TestWithDecreasingCharCollection_ReturnFalse()
+        {
+            var collection = new[] { 'f','e','d','c','b','a' };
+            var result = collection.IsIncreasing();
+            Assert.IsFalse(result);
+        }
     }
 }
