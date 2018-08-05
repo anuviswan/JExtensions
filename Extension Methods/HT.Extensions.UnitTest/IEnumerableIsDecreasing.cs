@@ -1,14 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HT.Extensions.UnitTest
 {
-    [TestClass]
-    public class IEnumerableIsDecreasing
+    public partial class IEnumerableTests
     {
         [TestMethod]
         public void IsDecreasing_TestWithIncreasingDoubleCollection_ReturnFalse()
