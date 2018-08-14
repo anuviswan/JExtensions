@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace HT.Extensions.UnitTest
 {
-    public partial class IEnumerableTests
+    [TestClass]
+    public class IEnumerableAlternatingTests
     {
         [TestMethod]
         public void IsAlternating_TestWithIncreasingDoubleCollection_ReturnFalse()

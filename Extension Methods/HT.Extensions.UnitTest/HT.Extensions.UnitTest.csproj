@@ -49,9 +49,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IEnumerableIsAlternating.cs" />
-    <Compile Include="IEnumerableIsDecreasing.cs" />
-    <Compile Include="IEnumerableIsIncreasing.cs" />
+    <Compile Include="IEnumerableIsAlternatingTests.cs" />
+    <Compile Include="IEnumerableIsDecreasingTests.cs" />
+    <Compile Include="IEnumerableIsIncreasingTests.cs" />
+    <Compile Include="IEnumerableShuffleTests.cs" />
     <Compile Include="Task.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -52,5 +52,11 @@ namespace HT.Extensions
                                .All(b => b);
 
         }
+
+
+        public static IEnumerable<TSource> Shuffle<TSource>(this IEnumerable<TSource> dataArray,bool useDurstenfeldModification = true)
+        {
+            return dataArray;
+        }
     }
 }

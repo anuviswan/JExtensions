@@ -2,7 +2,8 @@
 
 namespace HT.Extensions.UnitTest
 {
-    public partial class IEnumerableTests
+    [TestClass]
+    public class IEnumerableDecreasingTests
     {
         [TestMethod]
         public void IsDecreasing_TestWithIncreasingDoubleCollection_ReturnFalse()
