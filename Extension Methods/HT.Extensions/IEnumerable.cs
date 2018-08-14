@@ -2,13 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HT.Extensions
 {
     public static class IEnumerable
     {
+        private static Random _randomGenerator = new Random();
         /// <summary>
         /// Verifies if the Collection is sorted in increasing order
         /// </summary>
@@ -53,10 +52,25 @@ namespace HT.Extensions
 
         }
 
-
-        public static IEnumerable<TSource> Shuffle<TSource>(this IEnumerable<TSource> dataArray,bool useDurstenfeldModification = true)
+        /// <summary>
+        /// Shuffle a collection
+        /// </summary>
+        /// <typeparam name="TSource"></typeparam>
+        /// <param name="dataArray"></param>
+        /// <param name="useDurstenfeldModification"></param>
+        /// <returns></returns>
+        public static IEnumerable<TSource> Shuffle<TSource>(this IEnumerable<TSource> dataArray)
         {
-            return dataArray;
+            var dataArrayList = dataArray.ToList();
+            var returnValue = Enumerable.Empty<TSource>();
+            for (int index = dataArrayList.Count()-1; index > 0; index--)
+            {
+                var randomKey = _randomGenerator.Next(1, index);
+                var temp = dataArrayList[randomKey];
+                dataArrayList[randomKey] = dataArrayList[dataArray.Count() - 1];
+                dataArrayList[dataArray.Count() - 1] = temp;
+            }
+            return dataArrayList;
         }
     }
 }
