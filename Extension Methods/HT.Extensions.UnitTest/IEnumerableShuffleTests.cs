@@ -12,7 +12,7 @@ namespace HT.Extensions.UnitTest
     public class IEnumerableShuffleTests
     {
         [TestMethod()]
-        public void ShuffleTest_ValidIntArray_ShouldReturnRandomizedArray()
+        public void ShuffleTest_ForValidIntArray_ShouldReturnRandomizedArray()
         {
             var inputArray = Enumerable.Range(1, 100);
             var output= inputArray.Shuffle();
@@ -20,7 +20,16 @@ namespace HT.Extensions.UnitTest
         }
 
         [TestMethod()]
-        public void ShuffleTest_EqualIntArray_ShouldReturnSameArray()
+        public void ShuffleTest_ForRandomArrayWithRepeatedNumbers_ShouldReturnRandomizedArray()
+        {
+            var inputArray = Enumerable.Range(1, 100).Concat(Enumerable.Range(1,10));
+            var output = inputArray.Shuffle();
+            CollectionAssert.AreNotEqual(inputArray.ToList(), output.ToList());
+        }
+
+
+        [TestMethod()]
+        public void ShuffleTest_ForRandomArrayWithAllNumbersSame_ShouldReturnSameArray()
         {
             var inputArray = Enumerable.Repeat(1, 100);
             var output = inputArray.Shuffle();
@@ -28,8 +37,16 @@ namespace HT.Extensions.UnitTest
         }
 
         [TestMethod()]
+        public void ShuffleTest_ForSingleElementIntArray_ShouldReturnSameInt()
+        {
+            var inputArray = new[] { new Random().Next(1, 100) };
+            var output = inputArray.Shuffle();
+            CollectionAssert.AreEqual(inputArray.ToList(), output.ToList());
+        }
+
+        [TestMethod()]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void ShuffleTest_NullParameter_ShouldThrowArguementNullException()
+        public void ShuffleTest_ForNullParameter_ShouldThrowArguementNullException()
         {
             IList<int> inputArray = null;
             var output = inputArray.Shuffle();
