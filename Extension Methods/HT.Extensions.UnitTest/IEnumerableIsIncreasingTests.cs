@@ -1,10 +1,12 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace HT.Extensions.UnitTest
 {
     [TestClass]
     public class IEnumerableIncreasingTests
     {
+
         [TestMethod]
         public void IsIncreasing_TestWithIncreasingDoubleCollection_ReturnTrue()
         {
@@ -68,6 +70,15 @@ namespace HT.Extensions.UnitTest
             var collection = new[] { 'f','e','d','c','b','a' };
             var result = collection.IsIncreasing();
             Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void IsIncreasing_WithNull_ThrowException()
+        {
+            var collection = new[] { 1, 2, 3, 4, 5, 6 };
+            collection = null;
+            Assert.ThrowsException<ArgumentNullException>(() => collection.IsIncreasing());
+
         }
     }
 }
