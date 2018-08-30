@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MoreLinq;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace HT.Extensions
         /// <returns></returns>
         public static bool IsIncreasing<TSource>(this IEnumerable<TSource> data)
         {
-            return data.Zip(data.Skip(1), (first, second) => Comparer.Default.Compare(first, second) < 0).All(b => b);
+            return data.Pairwise((first, second) => Comparer.Default.Compare(first, second) < 0).All(b => b);
         }
 
         /// <summary>
@@ -27,7 +28,7 @@ namespace HT.Extensions
         /// <returns></returns>
         public static bool IsDecreasing<TSource>(this IEnumerable<TSource> data)
         {
-            return data.Zip(data.Skip(1), (first, second) => Comparer.Default.Compare(first, second) > 0).All(b => b);
+            return data.Pairwise((first, second) => Comparer.Default.Compare(first, second) > 0).All(b => b);
         }
 
         /// <summary>
