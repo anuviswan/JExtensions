@@ -2,7 +2,6 @@
 
 This contains Visual Studio Extensions
 
-1. Caliburn.Micro Template Pack  - A Complete starter pack for Caliburn Micro, including Project Templates, Bootstrapper implementation (SimpleContainer and MEF based), and Code Snippets.
 
 # Extension Methods
 
