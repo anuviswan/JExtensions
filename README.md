@@ -1,6 +1,4 @@
-# Visual Studio Extensions
-
-This contains Visual Studio Extensions
+# JExtensions
 
 
 # Extension Methods
