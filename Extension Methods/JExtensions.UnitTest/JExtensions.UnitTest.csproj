@@ -53,9 +53,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\JExtensions\HT.Extensions.csproj">
+    <ProjectReference Include="..\JExtensions\JExtensions.csproj">
       <Project>{aa224927-31d2-411c-97c1-b78742e7bb5b}</Project>
-      <Name>HT.Extensions</Name>
+      <Name>JExtensions</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

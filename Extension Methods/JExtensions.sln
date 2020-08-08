@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HT.Extensions", "JExtensions\HT.Extensions.csproj", "{AA224927-31D2-411C-97C1-B78742E7BB5B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JExtensions", "JExtensions\JExtensions.csproj", "{AA224927-31D2-411C-97C1-B78742E7BB5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HT.Extensions.UnitTest", "JExtensions.UnitTest\HT.Extensions.UnitTest.csproj", "{C210D06F-CE53-4C3F-8309-B1DF6738AC10}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JExtensions.UnitTest", "JExtensions.UnitTest\JExtensions.UnitTest.csproj", "{C210D06F-CE53-4C3F-8309-B1DF6738AC10}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
