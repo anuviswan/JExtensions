@@ -2,7 +2,7 @@
 using System.Threading;
 using Xunit;
 
-namespace JExtensions.UnitTest
+namespace JExtensions.UnitTest.TaskTests
 {
     public class Task
     {
@@ -35,7 +35,7 @@ namespace JExtensions.UnitTest
         [Fact]
         public void WaitForFirstN_OutOfRangeCount_ThrowException()
         {
-            Assert.Throws<ArgumentNullException>(()=> tasks.WaitForFirstN(10));
+            Assert.Throws<ArgumentNullException>(() => tasks.WaitForFirstN(10));
         }
     }
 }
