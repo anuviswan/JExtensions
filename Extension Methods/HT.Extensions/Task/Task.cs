@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace HT
+namespace HT.Extensions
 {
-    public static partial class Extensions
+    public static partial class TaskExtensions
     {
         /// <summary>
         /// Wait for First 'N' Tasks to be completed

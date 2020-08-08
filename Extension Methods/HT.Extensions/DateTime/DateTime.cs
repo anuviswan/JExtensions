@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace HT
+namespace HT.Extensions
 {
-    public static partial class Extensions
+    public static partial class DateTimeExtensions
     {
         public static bool IsWeekend(this DateTime source)
         {

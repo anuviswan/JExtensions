@@ -3,7 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using HT.Linq;
-namespace HT.Extensions.UnitTest
+
+namespace HT.Extensions.UnitTest.Linq
 {
     [TestClass()]
     public class IEnumerableShuffleTests
@@ -12,14 +13,14 @@ namespace HT.Extensions.UnitTest
         public void ShuffleTest_ForValidIntArray_ShouldReturnRandomizedArray()
         {
             var inputArray = Enumerable.Range(1, 100);
-            var output= inputArray.Shuffle();
+            var output = inputArray.Shuffle();
             CollectionAssert.AreNotEqual(inputArray.ToList(), output.ToList());
         }
 
         [TestMethod()]
         public void ShuffleTest_ForRandomArrayWithRepeatedNumbers_ShouldReturnRandomizedArray()
         {
-            var inputArray = Enumerable.Range(1, 100).Concat(Enumerable.Range(1,10));
+            var inputArray = Enumerable.Range(1, 100).Concat(Enumerable.Range(1, 10));
             var output = inputArray.Shuffle();
             CollectionAssert.AreNotEqual(inputArray.ToList(), output.ToList());
         }
@@ -55,7 +56,7 @@ namespace HT.Extensions.UnitTest
         {
             var inputArray = Enumerable.Empty<int>();
             var output = inputArray.Shuffle();
-            CollectionAssert.Equals(output, Enumerable.Empty<int>());
+            Equals(output, Enumerable.Empty<int>());
         }
     }
 }

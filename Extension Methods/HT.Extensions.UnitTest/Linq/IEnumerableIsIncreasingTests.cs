@@ -1,8 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using HT.Linq;
+using HT.Extensions.Linq;
 
-namespace HT.Extensions.UnitTest
+namespace HT.Extensions.UnitTest.Linq
 {
     [TestClass]
     public class IEnumerableIncreasingTests
@@ -27,7 +28,7 @@ namespace HT.Extensions.UnitTest
         [TestMethod]
         public void IsIncreasing_TestWithEqualValueDoubleCollection_ReturnFalse()
         {
-            var collection = new[] { 1,1,1,1,1,1,1 };
+            var collection = new[] { 1, 1, 1, 1, 1, 1, 1 };
             var result = collection.IsIncreasing();
             Assert.IsFalse(result);
         }
@@ -35,7 +36,7 @@ namespace HT.Extensions.UnitTest
         [TestMethod]
         public void IsIncreasing_TestWithDecreasingDoubleCollection_ReturnFalse()
         {
-            var collection = new[] { 6,5,4,3,2,1 };
+            var collection = new[] { 6, 5, 4, 3, 2, 1 };
             var result = collection.IsIncreasing();
             Assert.IsFalse(result);
         }
@@ -44,7 +45,7 @@ namespace HT.Extensions.UnitTest
         [TestMethod]
         public void IsIncreasing_TestWithIncreasingCharCollection_ReturnTrue()
         {
-            var collection = new[] { 'a', 'b','c','d','e','f' };
+            var collection = new[] { 'a', 'b', 'c', 'd', 'e', 'f' };
             var result = collection.IsIncreasing();
             Assert.IsTrue(result);
         }
@@ -52,7 +53,7 @@ namespace HT.Extensions.UnitTest
         [TestMethod]
         public void IsIncreasing_TestWithNonIncreasingCharCollection_ReturnFalse()
         {
-            var collection = new[] { 'a', 'c', 'b',  'e', 'd', 'f' };
+            var collection = new[] { 'a', 'c', 'b', 'e', 'd', 'f' };
             var result = collection.IsIncreasing();
             Assert.IsFalse(result);
         }
@@ -60,7 +61,7 @@ namespace HT.Extensions.UnitTest
         [TestMethod]
         public void IsIncreasing_TestWithEqualValueCharCollection_ReturnFalse()
         {
-            var collection = new[] { 'a','a','a','a' };
+            var collection = new[] { 'a', 'a', 'a', 'a' };
             var result = collection.IsIncreasing();
             Assert.IsFalse(result);
         }
@@ -68,7 +69,7 @@ namespace HT.Extensions.UnitTest
         [TestMethod]
         public void IsIncreasing_TestWithDecreasingCharCollection_ReturnFalse()
         {
-            var collection = new[] { 'f','e','d','c','b','a' };
+            var collection = new[] { 'f', 'e', 'd', 'c', 'b', 'a' };
             var result = collection.IsIncreasing();
             Assert.IsFalse(result);
         }

@@ -46,10 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DateTimeExtensionsTest.cs" />
-    <Compile Include="IEnumerableIsAlternatingTests.cs" />
-    <Compile Include="IEnumerableIsDecreasingTests.cs" />
-    <Compile Include="IEnumerableIsIncreasingTests.cs" />
-    <Compile Include="IEnumerableShuffleTests.cs" />
+    <Compile Include="Linq\IEnumerableIsDecreasingTests.cs" />
+    <Compile Include="Linq\IEnumerableIsIncreasingTests.cs" />
+    <Compile Include="Linq\IEnumerableShuffleTests.cs" />
     <Compile Include="Task.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

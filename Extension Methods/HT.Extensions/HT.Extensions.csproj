@@ -47,9 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DateTime.cs" />
-    <Compile Include="Linq\IEnumerableExtensions.cs" />
-    <Compile Include="Task.cs" />
+    <Compile Include="DateTime\DateTime.cs" />
+    <Compile Include="Linq\IsDecreasing.cs" />
+    <Compile Include="Linq\IsIncreasing.cs" />
+    <Compile Include="Linq\Shuffle.cs" />
+    <Compile Include="Task\Task.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

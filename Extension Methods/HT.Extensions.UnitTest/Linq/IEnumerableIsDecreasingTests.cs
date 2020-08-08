@@ -1,6 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HT.Linq;
-namespace HT.Extensions.UnitTest
+using HT.Extensions.Linq;
+
+namespace HT.Extensions.UnitTest.Linq
 {
     [TestClass]
     public class IEnumerableDecreasingTests
