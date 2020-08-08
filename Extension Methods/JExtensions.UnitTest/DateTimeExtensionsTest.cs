@@ -1,15 +1,14 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Globalization;
 using System.Linq;
 using System.Threading;
+using Xunit;
 
 namespace JExtensions.UnitTest
 {
-    [TestClass]
     public class DateTimeExtensionsTest
     {
-        [TestMethod]
+        [Fact]
         public void IsWeekendWithUsCulture_ShouldReturnTrueForSunday()
         {
             CultureInfo ci = new CultureInfo("en-US");
@@ -17,10 +16,10 @@ namespace JExtensions.UnitTest
             var date = Enumerable.Range(1, 7).Select(x=>new DateTime(DateTime.Now.Year, DateTime.Now.Month, x))
                                              .Single(x =>x.DayOfWeek == DayOfWeek.Sunday);
             var result = date.IsWeekend();
-            Assert.IsTrue(result);
+            Assert.True(result);
         }
 
-        [TestMethod]
+        [Fact]
         public void IsWeekendWithUsCulture_ShouldReturnFalseForFriday()
         {
             CultureInfo ci = new CultureInfo("en-US");
@@ -28,10 +27,10 @@ namespace JExtensions.UnitTest
             var date = Enumerable.Range(1, 7).Select(x => new DateTime(DateTime.Now.Year, DateTime.Now.Month, x))
                                              .Single(x => x.DayOfWeek == DayOfWeek.Friday);
             var result = date.IsWeekend();
-            Assert.IsFalse(result);
+            Assert.False(result);
         }
 
-        [TestMethod]
+        [Fact]
         public void IsWeekendWithSaudiCulture_ShouldReturnTrueForFriday()
         {
             CultureInfo ci = new CultureInfo("ar-SA");
@@ -39,10 +38,10 @@ namespace JExtensions.UnitTest
             var date = Enumerable.Range(1, 7).Select(x => new DateTime(DateTime.Now.Year, DateTime.Now.Month, x))
                                              .Single(x => x.DayOfWeek == DayOfWeek.Friday);
             var result = date.IsWeekend();
-            Assert.IsTrue(result);
+            Assert.True(result);
         }
 
-        [TestMethod]
+        [Fact]
         public void IsWeekendWithSaudiCulture_ShouldReturnFalseForSunday()
         {
             CultureInfo ci = new CultureInfo("ar-SA");
@@ -50,7 +49,7 @@ namespace JExtensions.UnitTest
             var date = Enumerable.Range(1, 7).Select(x => new DateTime(DateTime.Now.Year, DateTime.Now.Month, x))
                                              .Single(x => x.DayOfWeek == DayOfWeek.Sunday);
             var result = date.IsWeekend();
-            Assert.IsFalse(result);
+            Assert.False(result);
         }
 
     }
