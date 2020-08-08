@@ -4,9 +4,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace HT
+namespace HT.Linq
 {
-    public static partial class Extensions
+    public static class IEnumerableExtensions
     {
         private static Random _randomGenerator = new Random();
         /// <summary>

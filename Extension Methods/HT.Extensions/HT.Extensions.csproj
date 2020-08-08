@@ -48,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DateTime.cs" />
-    <Compile Include="IEnumerable.cs" />
+    <Compile Include="Linq\IEnumerableExtensions.cs" />
     <Compile Include="Task.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

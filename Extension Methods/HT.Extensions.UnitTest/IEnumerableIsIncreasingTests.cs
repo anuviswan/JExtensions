@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using HT.Linq;
 
 namespace HT.Extensions.UnitTest
 {

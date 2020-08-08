@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using HT.Linq;
 namespace HT.Extensions.UnitTest
 {
     [TestClass()]
