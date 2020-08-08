@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Threading;
-namespace HT.Extensions.UnitTest
+namespace JExtensions.UnitTest
 {
     [TestClass]
     public class Task

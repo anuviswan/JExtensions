@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace HT.Extensions
+namespace JExtensions
 {
     public static partial class DateTimeExtensions
     {

@@ -2,9 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using HT.Linq;
 
-namespace HT.Extensions.UnitTest.Linq
+namespace JExtensions.UnitTest.Linq
 {
     [TestClass()]
     public class IEnumerableShuffleTests

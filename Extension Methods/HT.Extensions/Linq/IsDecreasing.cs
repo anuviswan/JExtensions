@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HT.Extensions.Linq
+namespace JExtensions.Linq
 {
     public static partial class EnumerableExtensions
     {

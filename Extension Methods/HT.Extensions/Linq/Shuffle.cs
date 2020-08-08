@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace HT.Linq
+namespace JExtensions
 {
     public static partial class EnumerableExtensions
     {

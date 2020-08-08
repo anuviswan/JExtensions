@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace HT.Extensions.Linq
+namespace JExtensions.Linq
 {
     public static partial class EnumerableExtensions
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace HT.Extensions
+namespace JExtensions
 {
     public static partial class TaskExtensions
     {

@@ -1,9 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using JExtensions.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using HT.Linq;
-using HT.Extensions.Linq;
 
-namespace HT.Extensions.UnitTest.Linq
+namespace JExtensions.UnitTest.Linq
 {
     [TestClass]
     public class IEnumerableIncreasingTests

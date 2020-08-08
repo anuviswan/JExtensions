@@ -7,8 +7,8 @@
     <ProjectGuid>{AA224927-31D2-411C-97C1-B78742E7BB5B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HT.Extensions</RootNamespace>
-    <AssemblyName>HT.Extensions</AssemblyName>
+    <RootNamespace>JExtensions</RootNamespace>
+    <AssemblyName>JExtensions</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
