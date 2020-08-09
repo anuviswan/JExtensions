@@ -55,4 +55,4 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.JEXTDOC }}
           BRANCH: master # The branch the action should deploy to.
-          FOLDER: doc # The folder the action should deploy.
+          FOLDER: docs # The folder the action should deploy.
