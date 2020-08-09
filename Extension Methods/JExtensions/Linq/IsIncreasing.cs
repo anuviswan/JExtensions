@@ -1,4 +1,5 @@
 ﻿using MoreLinq;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,8 @@ namespace JExtensions.Linq
         /// <returns></returns>
         public static bool IsIncreasing<TSource>(this IEnumerable<TSource> data)
         {
+            if (data.Any(x => x == null))
+                throw new ArgumentNullException();
             return data.Pairwise((first, second) => Comparer.Default.Compare(first, second) < 0).All(b => b);
         }
     }

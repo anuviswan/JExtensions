@@ -22,8 +22,8 @@ namespace JExtensions.UnitTest.TaskTests
         [MemberData(nameof(WaitForFirstN_ValidScenarioTestData))]
         public void WaitForFirstN_ValidScenario(int numberOfTasks,int[] expectedResults)
         {
-            var completedTaskList = tasks.WaitForFirstN(3);
-            Assert.Equal(new int[] { 0, 1, 2 }, completedTaskList);
+            var completedTaskList = tasks.WaitForFirstN(numberOfTasks);
+            Assert.Equal(expectedResults, completedTaskList);
         }
 
         public static IEnumerable<object[]> WaitForFirstN_ValidScenarioTestData => new[]
@@ -33,10 +33,10 @@ namespace JExtensions.UnitTest.TaskTests
 
 
         [Theory]
-        [MemberData(nameof(WaitForFirstN_NumberOfTasksHigherThanTasksTestData)]
+        [MemberData(nameof(WaitForFirstN_NumberOfTasksHigherThanTasksTestData))]
         public void WaitForFirstN_OutOfRangeCount_ThrowException(int numberOfTasks)
         {
-            Assert.Throws<ArgumentNullException>(() => tasks.WaitForFirstN(numberOfTasks));
+            Assert.Throws<ArgumentOutOfRangeException>(() => tasks.WaitForFirstN(numberOfTasks));
         }
 
         public static IEnumerable<object[]> WaitForFirstN_NumberOfTasksHigherThanTasksTestData => new[]

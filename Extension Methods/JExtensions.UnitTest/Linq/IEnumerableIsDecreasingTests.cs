@@ -1,6 +1,8 @@
 ﻿using JExtensions.Linq;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 
 namespace JExtensions.UnitTest.Linq
@@ -8,85 +10,50 @@ namespace JExtensions.UnitTest.Linq
     public class IEnumerableIsDecreasingTests
     {
         [Theory]
-        [MemberData(nameof(ValidElementsTestData))]
-        public void IsDecreasing_ValidElements(IEnumerable<int> testData,bool expectedResult)
+        [MemberData(nameof(IsDecreasing_ValidElementsTestData))]
+        public void IsDecreasing_ValidElements<T>(IEnumerable<T> testData,bool expectedResult)
         {
             var result = testData.IsDecreasing();
             Assert.Equal(expectedResult, result);
         }
 
-        public static IEnumerable<object[]> ValidElementsTestData
+        public static IEnumerable<object[]> IsDecreasing_ValidElementsTestData => new[]
         {
-            get
-            {
-                yield return new object[] { new[] { 1, 2, 3, 4, 5 }, true };
-            }
-        }
-       
+            // Int Collection
+            new object[] { new [] { 1, 2, 3, 4, 5 }, false }, 
+            new object[] { new[] { 5,4,3,2,1 }, true },
+            new object[] { new[] { 1,1,1,1,1 }, false },
 
-        [Fact]
-        public void IsDecreasing_TestWithIncreasingDoubleCollection_ReturnFalse()
-        {
-            var collection = new[] { 1, 2, 3, 4, 5, 6 };
-            var result = collection.IsDecreasing();
-            Assert.False(result);
-        }
+            // Double Collection
+            new object[] { new [] { 1D, 2D, 3D, 4D, 5D }, false }, 
+            new object[] { new[] { 5D,4D,3D,2D,1D }, true },
+            new object[] { new[] { 1D,1D,1D,1D,1D }, false },
 
-        [Fact]
-        public void IsDecreasing_TestWithNonIncreasingDoubleCollection_ReturnFalse()
-        {
-            var collection = new[] { 1, 3, 2, 6, 1, 6 };
-            var result = collection.IsDecreasing();
-            Assert.False(result);
-        }
+            // Char Collection
+            new object[] { new [] { 'a','b','c','d','e' }, false }, 
+            new object[] { new [] { 'e','d','c','b','a' }, true }, 
+            new object[] { new [] { 'a','a','a','a','a'}, false }, 
+        };
 
-        [Fact]
-        public void IsDecreasing_TestWithEqualValueDoubleCollection_ReturnFalse()
+        
+        [Theory]
+        [MemberData(nameof(IsDecreasing_NullItemInCollectionTestData))]
+        public void IsDecreasing_NullItemInCollection<T>(IEnumerable<T?> testData) where T:struct
         {
-            var collection = new[] { 1, 1, 1, 1, 1, 1, 1 };
-            var result = collection.IsDecreasing();
-            Assert.False(result);
+            Assert.Throws<ArgumentNullException>(()=> testData.IsDecreasing());
         }
 
-        [Fact]
-        public void IsDecreasing_TestWithDecreasingDoubleCollection_ReturnTrue()
+        public static IEnumerable<object[]> IsDecreasing_NullItemInCollectionTestData => new[]
         {
-            var collection = new[] { 6, 5, 4, 3, 2, 1 };
-            var result = collection.IsDecreasing();
-            Assert.True(result);
-        }
+            // Int Collection
+            new object[] { new int?[] { 1, 2, null, 4, 5 } },
 
-
-        [Fact]
-        public void IsDecreasing_TestWithIncreasingCharCollection_ReturnFalse()
-        {
-            var collection = new[] { 'a', 'b', 'c', 'd', 'e', 'f' };
-            var result = collection.IsDecreasing();
-            Assert.False(result);
-        }
-
-        [Fact]
-        public void IsDecreasing_TestWithNonIncreasingCharCollection_ReturnFalse()
-        {
-            var collection = new[] { 'a', 'c', 'b', 'e', 'd', 'f' };
-            var result = collection.IsDecreasing();
-            Assert.False(result);
-        }
-
-        [Fact]
-        public void IsDecreasing_TestWithEqualValueCharCollection_ReturnFalse()
-        {
-            var collection = new[] { 'a', 'a', 'a', 'a' };
-            var result = collection.IsDecreasing();
-            Assert.False(result);
-        }
-
-        [Fact]
-        public void IsDecreasing_TestWithDecreasingCharCollection_ReturnTrue()
-        {
-            var collection = new[] { 'f', 'e', 'd', 'c', 'b', 'a' };
-            var result = collection.IsDecreasing();
-            Assert.True(result);
-        }
+            // Double Collection
+            new object[] { new double?[] { 1D, 2D, null, 4D, 5D }},
+           
+            // Char Collection
+            new object[] { new char?[] { 'a','b',null,'d','e' } },
+            
+        };
     }
 }

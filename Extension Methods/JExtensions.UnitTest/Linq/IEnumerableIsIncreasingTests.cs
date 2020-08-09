@@ -1,5 +1,6 @@
 ﻿using JExtensions.Linq;
 using System;
+using System.Collections.Generic;
 using Xunit;
 
 namespace JExtensions.UnitTest.Linq
@@ -7,78 +8,51 @@ namespace JExtensions.UnitTest.Linq
     public class IEnumerableIncreasingTests
     {
 
-        [Fact]
-        public void IsIncreasing_TestWithIncreasingDoubleCollection_ReturnTrue()
+        [Theory]
+        [MemberData(nameof(IsIncreasing_ValidElementsTestData))]
+        public void IsIncreasing_ValidElements<T>(IEnumerable<T> testData, bool expectedResult)
         {
-            var collection = new[] { 1, 2, 3, 4, 5, 6 };
-            var result = collection.IsIncreasing();
-            Assert.True(result);
+            var result = testData.IsIncreasing();
+            Assert.Equal(expectedResult, result);
         }
 
-        [Fact]
-        public void IsIncreasing_TestWithNonIncreasingDoubleCollection_ReturnFalse()
+        public static IEnumerable<object[]> IsIncreasing_ValidElementsTestData => new[]
         {
-            var collection = new[] { 1, 3, 2, 6, 1, 6 };
-            var result = collection.IsIncreasing();
-            Assert.False(result);
+            // Int Collection
+            new object[] { new [] { 1, 2, 3, 4, 5 }, true },
+            new object[] { new[] { 5,4,3,2,1 }, false },
+            new object[] { new[] { 1,1,1,1,1 }, false },
+
+            // Double Collection
+            new object[] { new [] { 1D, 2D, 3D, 4D, 5D }, true },
+            new object[] { new[] { 5D,4D,3D,2D,1D }, false },
+            new object[] { new[] { 1D,1D,1D,1D,1D }, false },
+
+            // Char Collection
+            new object[] { new [] { 'a','b','c','d','e' }, true},
+            new object[] { new [] { 'e','d','c','b','a' }, false },
+            new object[] { new [] { 'a','a','a','a','a'}, false },
+        };
+
+
+        [Theory]
+        [MemberData(nameof(IsIncreasing_NullItemInCollectionTestData))]
+        public void IsIncreasing_NullItemInCollection<T>(IEnumerable<T?> testData) where T : struct
+        {
+            Assert.Throws<ArgumentNullException>(() => testData.IsIncreasing());
         }
 
-        [Fact]
-        public void IsIncreasing_TestWithEqualValueDoubleCollection_ReturnFalse()
+        public static IEnumerable<object[]> IsIncreasing_NullItemInCollectionTestData => new[]
         {
-            var collection = new[] { 1, 1, 1, 1, 1, 1, 1 };
-            var result = collection.IsIncreasing();
-            Assert.False(result);
-        }
+            // Int Collection
+            new object[] { new int?[] { 1, 2, null, 4, 5 } },
 
-        [Fact]
-        public void IsIncreasing_TestWithDecreasingDoubleCollection_ReturnFalse()
-        {
-            var collection = new[] { 6, 5, 4, 3, 2, 1 };
-            var result = collection.IsIncreasing();
-            Assert.False(result);
-        }
+            // Double Collection
+            new object[] { new double?[] { 1D, 2D, null, 4D, 5D }},
+           
+            // Char Collection
+            new object[] { new char?[] { 'a','b',null,'d','e' } },
 
-
-        [Fact]
-        public void IsIncreasing_TestWithIncreasingCharCollection_ReturnTrue()
-        {
-            var collection = new[] { 'a', 'b', 'c', 'd', 'e', 'f' };
-            var result = collection.IsIncreasing();
-            Assert.True(result);
-        }
-
-        [Fact]
-        public void IsIncreasing_TestWithNonIncreasingCharCollection_ReturnFalse()
-        {
-            var collection = new[] { 'a', 'c', 'b', 'e', 'd', 'f' };
-            var result = collection.IsIncreasing();
-            Assert.True(result);
-        }
-
-        [Fact]
-        public void IsIncreasing_TestWithEqualValueCharCollection_ReturnFalse()
-        {
-            var collection = new[] { 'a', 'a', 'a', 'a' };
-            var result = collection.IsIncreasing();
-            Assert.False(result);
-        }
-
-        [Fact]
-        public void IsIncreasing_TestWithDecreasingCharCollection_ReturnFalse()
-        {
-            var collection = new[] { 'f', 'e', 'd', 'c', 'b', 'a' };
-            var result = collection.IsIncreasing();
-            Assert.False(result);
-        }
-
-        [Fact]
-        public void IsIncreasing_WithNull_ThrowException()
-        {
-            var collection = new[] { 1, 2, 3, 4, 5, 6 };
-            collection = null;
-            Assert.Throws<ArgumentNullException>(() => collection.IsIncreasing());
-
-        }
+        };
     }
 }
