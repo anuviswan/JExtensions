@@ -1,0 +1,116 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: JExtensions
+  name: JExtensions
+  href: api/JExtensions.html
+  commentId: N:JExtensions
+  fullName: JExtensions
+  nameWithType: JExtensions
+- uid: JExtensions.DateTimeExtensions
+  name: DateTimeExtensions
+  href: api/JExtensions.DateTimeExtensions.html
+  commentId: T:JExtensions.DateTimeExtensions
+  fullName: JExtensions.DateTimeExtensions
+  nameWithType: DateTimeExtensions
+- uid: JExtensions.DateTimeExtensions.IsWeekend(System.DateTime)
+  name: IsWeekend(DateTime)
+  href: api/JExtensions.DateTimeExtensions.html#JExtensions_DateTimeExtensions_IsWeekend_System_DateTime_
+  commentId: M:JExtensions.DateTimeExtensions.IsWeekend(System.DateTime)
+  fullName: JExtensions.DateTimeExtensions.IsWeekend(System.DateTime)
+  nameWithType: DateTimeExtensions.IsWeekend(DateTime)
+- uid: JExtensions.DateTimeExtensions.IsWeekend*
+  name: IsWeekend
+  href: api/JExtensions.DateTimeExtensions.html#JExtensions_DateTimeExtensions_IsWeekend_
+  commentId: Overload:JExtensions.DateTimeExtensions.IsWeekend
+  isSpec: "True"
+  fullName: JExtensions.DateTimeExtensions.IsWeekend
+  nameWithType: DateTimeExtensions.IsWeekend
+- uid: JExtensions.EnumerableExtensions
+  name: EnumerableExtensions
+  href: api/JExtensions.EnumerableExtensions.html
+  commentId: T:JExtensions.EnumerableExtensions
+  fullName: JExtensions.EnumerableExtensions
+  nameWithType: EnumerableExtensions
+- uid: JExtensions.EnumerableExtensions.Shuffle*
+  name: Shuffle
+  href: api/JExtensions.EnumerableExtensions.html#JExtensions_EnumerableExtensions_Shuffle_
+  commentId: Overload:JExtensions.EnumerableExtensions.Shuffle
+  isSpec: "True"
+  fullName: JExtensions.EnumerableExtensions.Shuffle
+  nameWithType: EnumerableExtensions.Shuffle
+- uid: JExtensions.EnumerableExtensions.Shuffle``1(System.Collections.Generic.IEnumerable{``0})
+  name: Shuffle<TSource>(IEnumerable<TSource>)
+  href: api/JExtensions.EnumerableExtensions.html#JExtensions_EnumerableExtensions_Shuffle__1_System_Collections_Generic_IEnumerable___0__
+  commentId: M:JExtensions.EnumerableExtensions.Shuffle``1(System.Collections.Generic.IEnumerable{``0})
+  name.vb: Shuffle(Of TSource)(IEnumerable(Of TSource))
+  fullName: JExtensions.EnumerableExtensions.Shuffle<TSource>(System.Collections.Generic.IEnumerable<TSource>)
+  fullName.vb: JExtensions.EnumerableExtensions.Shuffle(Of TSource)(System.Collections.Generic.IEnumerable(Of TSource))
+  nameWithType: EnumerableExtensions.Shuffle<TSource>(IEnumerable<TSource>)
+  nameWithType.vb: EnumerableExtensions.Shuffle(Of TSource)(IEnumerable(Of TSource))
+- uid: JExtensions.Linq
+  name: JExtensions.Linq
+  href: api/JExtensions.Linq.html
+  commentId: N:JExtensions.Linq
+  fullName: JExtensions.Linq
+  nameWithType: JExtensions.Linq
+- uid: JExtensions.Linq.EnumerableExtensions
+  name: EnumerableExtensions
+  href: api/JExtensions.Linq.EnumerableExtensions.html
+  commentId: T:JExtensions.Linq.EnumerableExtensions
+  fullName: JExtensions.Linq.EnumerableExtensions
+  nameWithType: EnumerableExtensions
+- uid: JExtensions.Linq.EnumerableExtensions.IsDecreasing*
+  name: IsDecreasing
+  href: api/JExtensions.Linq.EnumerableExtensions.html#JExtensions_Linq_EnumerableExtensions_IsDecreasing_
+  commentId: Overload:JExtensions.Linq.EnumerableExtensions.IsDecreasing
+  isSpec: "True"
+  fullName: JExtensions.Linq.EnumerableExtensions.IsDecreasing
+  nameWithType: EnumerableExtensions.IsDecreasing
+- uid: JExtensions.Linq.EnumerableExtensions.IsDecreasing``1(System.Collections.Generic.IEnumerable{``0})
+  name: IsDecreasing<TSource>(IEnumerable<TSource>)
+  href: api/JExtensions.Linq.EnumerableExtensions.html#JExtensions_Linq_EnumerableExtensions_IsDecreasing__1_System_Collections_Generic_IEnumerable___0__
+  commentId: M:JExtensions.Linq.EnumerableExtensions.IsDecreasing``1(System.Collections.Generic.IEnumerable{``0})
+  name.vb: IsDecreasing(Of TSource)(IEnumerable(Of TSource))
+  fullName: JExtensions.Linq.EnumerableExtensions.IsDecreasing<TSource>(System.Collections.Generic.IEnumerable<TSource>)
+  fullName.vb: JExtensions.Linq.EnumerableExtensions.IsDecreasing(Of TSource)(System.Collections.Generic.IEnumerable(Of TSource))
+  nameWithType: EnumerableExtensions.IsDecreasing<TSource>(IEnumerable<TSource>)
+  nameWithType.vb: EnumerableExtensions.IsDecreasing(Of TSource)(IEnumerable(Of TSource))
+- uid: JExtensions.Linq.EnumerableExtensions.IsIncreasing*
+  name: IsIncreasing
+  href: api/JExtensions.Linq.EnumerableExtensions.html#JExtensions_Linq_EnumerableExtensions_IsIncreasing_
+  commentId: Overload:JExtensions.Linq.EnumerableExtensions.IsIncreasing
+  isSpec: "True"
+  fullName: JExtensions.Linq.EnumerableExtensions.IsIncreasing
+  nameWithType: EnumerableExtensions.IsIncreasing
+- uid: JExtensions.Linq.EnumerableExtensions.IsIncreasing``1(System.Collections.Generic.IEnumerable{``0})
+  name: IsIncreasing<TSource>(IEnumerable<TSource>)
+  href: api/JExtensions.Linq.EnumerableExtensions.html#JExtensions_Linq_EnumerableExtensions_IsIncreasing__1_System_Collections_Generic_IEnumerable___0__
+  commentId: M:JExtensions.Linq.EnumerableExtensions.IsIncreasing``1(System.Collections.Generic.IEnumerable{``0})
+  name.vb: IsIncreasing(Of TSource)(IEnumerable(Of TSource))
+  fullName: JExtensions.Linq.EnumerableExtensions.IsIncreasing<TSource>(System.Collections.Generic.IEnumerable<TSource>)
+  fullName.vb: JExtensions.Linq.EnumerableExtensions.IsIncreasing(Of TSource)(System.Collections.Generic.IEnumerable(Of TSource))
+  nameWithType: EnumerableExtensions.IsIncreasing<TSource>(IEnumerable<TSource>)
+  nameWithType.vb: EnumerableExtensions.IsIncreasing(Of TSource)(IEnumerable(Of TSource))
+- uid: JExtensions.TaskExtensions
+  name: TaskExtensions
+  href: api/JExtensions.TaskExtensions.html
+  commentId: T:JExtensions.TaskExtensions
+  fullName: JExtensions.TaskExtensions
+  nameWithType: TaskExtensions
+- uid: JExtensions.TaskExtensions.WaitForFirstN(System.Threading.Tasks.Task[],System.Int32)
+  name: WaitForFirstN(Task[], Int32)
+  href: api/JExtensions.TaskExtensions.html#JExtensions_TaskExtensions_WaitForFirstN_System_Threading_Tasks_Task___System_Int32_
+  commentId: M:JExtensions.TaskExtensions.WaitForFirstN(System.Threading.Tasks.Task[],System.Int32)
+  name.vb: WaitForFirstN(Task(), Int32)
+  fullName: JExtensions.TaskExtensions.WaitForFirstN(System.Threading.Tasks.Task[], System.Int32)
+  fullName.vb: JExtensions.TaskExtensions.WaitForFirstN(System.Threading.Tasks.Task(), System.Int32)
+  nameWithType: TaskExtensions.WaitForFirstN(Task[], Int32)
+  nameWithType.vb: TaskExtensions.WaitForFirstN(Task(), Int32)
+- uid: JExtensions.TaskExtensions.WaitForFirstN*
+  name: WaitForFirstN
+  href: api/JExtensions.TaskExtensions.html#JExtensions_TaskExtensions_WaitForFirstN_
+  commentId: Overload:JExtensions.TaskExtensions.WaitForFirstN
+  isSpec: "True"
+  fullName: JExtensions.TaskExtensions.WaitForFirstN
+  nameWithType: TaskExtensions.WaitForFirstN
