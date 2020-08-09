@@ -36,10 +36,6 @@ jobs:
       - name: Build App
         run: msbuild JExtensions.sln /p:Configuration=Release
 
-      - uses: nikeee/docfx-action@v1.0.0
-        name: Build Documentation
-        with:
-          args: docfx_project/docfx.json
   BuildDocumentation:
     # The type of runner that the job will run on
     name: Build Documentation
