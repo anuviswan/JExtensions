@@ -49,7 +49,7 @@
     <Compile Include="Linq\IEnumerableIsDecreasingTests.cs" />
     <Compile Include="Linq\IEnumerableIsIncreasingTests.cs" />
     <Compile Include="Linq\IEnumerableShuffleTests.cs" />
-    <Compile Include="TaskTests\Task.cs" />
+    <Compile Include="TaskTests\TaskExtensionsTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
