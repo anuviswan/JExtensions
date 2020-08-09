@@ -45,11 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DateTimeTests\DateTimeExtensionsTest.cs" />
+    <Compile Include="DateTimeTests\IsWeekendTests.cs" />
     <Compile Include="Linq\IEnumerableIsDecreasingTests.cs" />
     <Compile Include="Linq\IEnumerableIsIncreasingTests.cs" />
     <Compile Include="Linq\IEnumerableShuffleTests.cs" />
-    <Compile Include="TaskTests\TaskExtensionsTest.cs" />
+    <Compile Include="TaskTests\WaitForNTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

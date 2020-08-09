@@ -5,11 +5,11 @@ using Xunit;
 
 namespace JExtensions.UnitTest.TaskTests
 {
-    public class TaskExtensionsTest
+    public class WaitForNTests
     {
         System.Threading.Tasks.Task[] tasks = new System.Threading.Tasks.Task[5];
 
-        public TaskExtensionsTest()
+        public WaitForNTests()
         {
             for (int ctr = 0; ctr <= 4; ctr++)
             {

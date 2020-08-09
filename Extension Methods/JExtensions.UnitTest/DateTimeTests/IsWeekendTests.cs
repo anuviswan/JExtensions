@@ -7,7 +7,7 @@ using Xunit;
 
 namespace JExtensions.UnitTest.DateTimeTests
 {
-    public class DateTimeExtensionsTest
+    public class IsWeekendTests
     {
         [Theory]
         [MemberData(nameof(IsWeekend_USCulture_TestData))]
