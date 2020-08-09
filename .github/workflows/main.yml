@@ -6,9 +6,9 @@ name: CI
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -19,12 +19,24 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-    # Runs a single command using the runners shell
-    - name: Run a one-line script
-      run: echo Hello, world!
+      - name: Setup MSBuild Path
+        run: warrenbuckley/Setup-MSBuild@v1
 
-    - name: Build
-      run: dotnet build --configuration Release
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1.0.2
+
+      - name: Restore NuGet Packages
+        run: nuget restore JExtensions.sln
+
+      - name: Build and Publish Web App
+        run: msbuild JExtensions.sln /p:Configuration=Release
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      - name: Build
+        run: dotnet build --configuration Release
