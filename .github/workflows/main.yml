@@ -49,7 +49,7 @@ jobs:
       - uses: nikeee/docfx-action@v1.0.0
         name: Build Documentation
         with:
-          args: docfx_project\docfx.json
+          args: docfx_project/docfx.json
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.5.9
         with:
