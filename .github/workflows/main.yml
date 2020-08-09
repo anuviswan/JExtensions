@@ -55,4 +55,4 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.JEXTDOC }}
           BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: docs # The folder the action should deploy.
+          FOLDER: docfx_project\_site # The folder the action should deploy.
