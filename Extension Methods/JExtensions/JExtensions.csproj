@@ -32,9 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MoreLinq, Version=3.0.0.0, Culture=neutral, PublicKeyToken=384d532d7e88985d, processorArchitecture=MSIL">
-      <HintPath>..\packages\morelinq.3.0.0\lib\net451\MoreLinq.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -51,6 +48,7 @@
     <Compile Include="DateTime\DateTime.cs" />
     <Compile Include="Linq\IsDecreasing.cs" />
     <Compile Include="Linq\IsIncreasing.cs" />
+    <Compile Include="Linq\Pairwise.cs" />
     <Compile Include="Linq\Shuffle.cs" />
     <Compile Include="Task\Task.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
