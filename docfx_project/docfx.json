@@ -4,8 +4,7 @@
       "src": [
         {
           "files": ["**.csproj"],
-          "cwd": "..",
-          "src": "../../../Extension Methods/JExtensions"
+          "src": "../Extension Methods/JExtensions"
         }
       ],
       "dest": "api",
