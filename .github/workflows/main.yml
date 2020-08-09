@@ -7,8 +7,6 @@ name: CI
 on:
   push:
     branches: [master]
-  pull_request:
-    branches: [master]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -50,9 +48,18 @@ jobs:
         name: Build Documentation
         with:
           args: docfx_project/docfx.json
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@3.5.9
+
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
         with:
+          target_branch: gh-pages
+          build_dir: docfx_project/_site
+        env:
           GITHUB_TOKEN: ${{ secrets.JEXTDOC }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: docfx_project\_site # The folder the action should deploy.
+      # - name: Deploy
+      #   uses: JamesIves/github-pages-deploy-action@3.5.9
+      #   with:
+      #     GITHUB_TOKEN: ${{ secrets.JEXTDOC }}
+      #     BRANCH: gh-pages # The branch the action should deploy to.
+      #     FOLDER: _site # The folder the action should deploy.
