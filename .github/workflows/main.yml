@@ -50,3 +50,9 @@ jobs:
         name: Build Documentation
         with:
           args: docfx_project/docfx.json
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.5.9
+        with:
+          GITHUB_TOKEN: ${{ secrets.JEXTDOC }}
+          BRANCH: master # The branch the action should deploy to.
+          FOLDER: doc # The folder the action should deploy.
