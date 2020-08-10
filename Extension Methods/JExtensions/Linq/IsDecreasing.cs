@@ -2,19 +2,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace JExtensions.Linq
 {
     public static partial class EnumerableExtensions
     {
         /// <summary>
-        /// Verifies if the Collection is sorted in increasing order
+        /// Determines if the sequence is sorted in decreasing/descending order
         /// </summary>
-        /// <typeparam name="TSource"></typeparam>
-        /// <param name="data">Collection of objects that implement IComparable</param>
-        /// <returns></returns>
+        /// <typeparam name="TSource">The type of elements of source.</typeparam>
+        /// <param name="data">The IEnumerable<typeparamref name="TSource"/> to check is sorted in decreasing/descending order.</param>
+        /// <returns>true if the sequence is sorted in decreasing/descending order; otherwise false</returns>
         public static bool IsDecreasing<TSource>(this IEnumerable<TSource> data)
         {
             if (data.Any(x => x == null))
