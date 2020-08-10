@@ -7,6 +7,11 @@ namespace JExtensions
 {
     public static partial class DateTimeExtensions
     {
+        /// <summary>
+        /// Determines whether the given Date falls on a Weeekend.
+        /// </summary>
+        /// <param name="source">Date to check</param>
+        /// <returns>true if the source falls on a weekend, otherwise false</returns>
         public static bool IsWeekend(this DateTime source)
         {
             var currentCulture = CultureInfo.CurrentCulture;

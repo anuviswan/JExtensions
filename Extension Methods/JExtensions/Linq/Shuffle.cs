@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace JExtensions
+namespace JExtensions.Linq
 {
     public static partial class EnumerableExtensions
     {
@@ -11,10 +11,9 @@ namespace JExtensions
         /// <summary>
         /// Shuffle a collection
         /// </summary>
-        /// <typeparam name="TSource"></typeparam>
-        /// <param name="dataArray"></param>
-        /// <param name="useDurstenfeldModification"></param>
-        /// <returns></returns>
+        /// <typeparam name="TSource">The type of elements of source.</typeparam>
+        /// <param name="dataArray">The IEnumerable<typeparamref name="TSource"/> which needs to be shuffled</param>
+        /// <returns>A sequence of elements correspond to those of input sequenced in random order</returns>
         public static IEnumerable<TSource> Shuffle<TSource>(this IEnumerable<TSource> dataArray)
         {
             var dataArrayList = dataArray.ToList();
