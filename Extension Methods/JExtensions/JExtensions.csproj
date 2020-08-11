@@ -42,13 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DateTime\DateTime.cs" />
+    <Compile Include="DateTime\IsWeekend.cs" />
     <Compile Include="Linq\IsDecreasing.cs" />
     <Compile Include="Linq\IsIncreasing.cs" />
     <Compile Include="Linq\Pairwise.cs" />
     <Compile Include="Linq\Shuffle.cs" />
-    <Compile Include="Task\Task.cs" />
+    <Compile Include="Task\WaitForFirstN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Type\GetDerievedTypesOf.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -52,6 +52,7 @@
     <Compile Include="Linq\IEnumerableShuffleTests.cs" />
     <Compile Include="TaskTests\WaitForNTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypeTests\GetDerievedTypesOfTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\JExtensions\JExtensions.csproj">
