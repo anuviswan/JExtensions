@@ -10,11 +10,24 @@ namespace JExtensions.UnitTest.TypeTests
     {
         [Theory]
         [MemberData(nameof(GetDerievedTypesOf_ValidScenario_TestData))]
-        public void GetDerievedTypesOf_ValidScenario(Type source,IEnumerable<Type> expectedResult)
+        public void GetDerievedTypesOf_WithAssemblyOverload_ValidScenario(Type source,IEnumerable<Type> expectedResult)
         {
             var expectedResultAsList = expectedResult.ToList();
 
             var result = source.GetDerievedTypesOf(this.GetType().Assembly);
+
+            Assert.Equal(expectedResultAsList.Count, result.Count());
+            foreach (var item in result)
+                Assert.Contains(item, expectedResultAsList);
+        }
+
+        [Theory]
+        [MemberData(nameof(GetDerievedTypesOf_ValidScenario_TestData))]
+        public void GetDerievedTypesOf_WithoutAssemblyOverload_ValidScenario(Type source, IEnumerable<Type> expectedResult)
+        {
+            var expectedResultAsList = expectedResult.ToList();
+
+            var result = source.GetDerievedTypesOf();
 
             Assert.Equal(expectedResultAsList.Count, result.Count());
             foreach (var item in result)
@@ -40,7 +53,7 @@ namespace JExtensions.UnitTest.TypeTests.MockData
     public class BaseClass { }
     public class DerievedA :BaseClass,BaseInterface{ }
     public class DerievedB :BaseClass, BaseInterface { }
-    public class DerievedC :DerievedA { }
+    public class DerievedC :DerievedA  { }
 
     public abstract class AbstractClass { }
     public class DerievedD:AbstractClass, BaseInterface { }

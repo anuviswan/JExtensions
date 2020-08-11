@@ -7,6 +7,7 @@ namespace JExtensions
 {
     public static partial class TypeExtensions
     {
+        public static IEnumerable<Type> GetDerievedTypesOf(this Type source) => source.GetDerievedTypesOf(source.Assembly);
 
         public static IEnumerable<Type> GetDerievedTypesOf(this Type source, Assembly assembly)
         {
