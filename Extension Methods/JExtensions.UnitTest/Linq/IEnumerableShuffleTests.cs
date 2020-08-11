@@ -18,14 +18,8 @@ namespace JExtensions.UnitTest.Linq
 
         public static IEnumerable<object[]> ShuffleTest_ValidScenario_TestData => new []
         {
-            new object[]{ new []{1,2,3,4,5},false},
-            new object[]{ new []{5,3,7,9,2},false},
-            new object[]{ new []{1,1,1,1,1},true},
-            new object[]{ new []{1,2,3,1,2},false},
-
-            new object[]{new [] {'a','b','c','d','e'},false},
-            new object[]{new [] {'a','a','a','a','a'},true},
-            new object[]{new [] {'a','b','c','a','b'},false},
+            new object[]{ Enumerable.Range(1,100),false},
+            new object[]{ Enumerable.Repeat(1,100),false},
         };
     }
 }
