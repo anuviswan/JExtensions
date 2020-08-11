@@ -48,5 +48,6 @@ namespace JExtensions.Benchmark.Linq
             var result = _charCollectionSource.OrderBy(x => random.Next());
             var materializeList = result.ToList();
         }
+
     }
 }

@@ -18,13 +18,14 @@ namespace JExtensions.Linq
         {
             if (source == null) throw new ArgumentNullException();
 
-            var dataArrayList = source.ToList();
-            for (int index = dataArrayList.Count()-1; index > 0; index--)
+            var dataArrayList = source.ToArray();
+            var numberOfItems = dataArrayList.Length;
+            for (int index = numberOfItems-1; index > 0; index--)
             {
                 var randomKey = _randomGenerator.Next(1, index);
                 var temp = dataArrayList[randomKey];
-                dataArrayList[randomKey] = dataArrayList[source.Count() - 1];
-                dataArrayList[source.Count() - 1] = temp;
+                dataArrayList[randomKey] = dataArrayList[numberOfItems - 1];
+                dataArrayList[numberOfItems - 1] = temp;
             }
             return dataArrayList;
         }
