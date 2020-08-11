@@ -7,13 +7,7 @@ _JExtensions_ contains a set of unrelated extension methods which developers fin
 ### Type
 
 **GetDerievedTypeOf**
-Retrieves a sequence of Types which implements/derieves from the given source type
 
-_This method has two overloads_
-
-### Type
-
-**GetDerievedTypeOf**
 Retrieves a sequence of Types which implements/derieves from the given source type
 
 _This method has two overloads_
