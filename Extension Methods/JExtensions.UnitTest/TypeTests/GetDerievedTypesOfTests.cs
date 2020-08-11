@@ -1,10 +1,7 @@
-﻿using System;
+﻿using JExtensions.UnitTest.TypeTests.MockData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using JExtensions;
-using JExtensions.UnitTest.TypeTests.MockData;
 using Xunit;
 
 namespace JExtensions.UnitTest.TypeTests
@@ -26,21 +23,30 @@ namespace JExtensions.UnitTest.TypeTests
 
         public static IEnumerable<object[]> GetDerievedTypesOf_ValidScenario_TestData => new[]
         {
-            new object[]{typeof(BaseClass),new[] {typeof(DerievedA), typeof(DerievedB), typeof(DerievedC) } }
+            new object[]{typeof(BaseClass),new[] {typeof(DerievedA), typeof(DerievedB), typeof(DerievedC) } },
+            new object[]{typeof(AbstractClass),new[] {typeof(DerievedD), typeof(DerievedE), typeof(DerievedF) } },
+            new object[]{typeof(SealedClass),Enumerable.Empty<Type>()},
+            new object[]{typeof(BaseInterface),new[]{ typeof(DerievedA), typeof(DerievedB), typeof(DerievedC), typeof(DerievedD), typeof(DerievedE), typeof(DerievedF) } },
         };
+
     }
 }
 
 namespace JExtensions.UnitTest.TypeTests.MockData
 {
-    public class BaseClass { }
-    public class DerievedA :BaseClass{ }
-    public class DerievedB :BaseClass{ }
-    public class DerievedC :DerievedA{ }
 
-    public class AbstractClass { }
-    public class DerievedD:AbstractClass{ }
-    public class DerievedE : AbstractClass { }
-    public class DerievedF : AbstractClass { }
+    public sealed class SealedClass { }
+
+    public class BaseClass { }
+    public class DerievedA :BaseClass,BaseInterface{ }
+    public class DerievedB :BaseClass, BaseInterface { }
+    public class DerievedC :DerievedA { }
+
+    public abstract class AbstractClass { }
+    public class DerievedD:AbstractClass, BaseInterface { }
+    public class DerievedE : AbstractClass, BaseInterface { }
+    public class DerievedF : DerievedD { }
+
+    public interface BaseInterface { }
 
 }
