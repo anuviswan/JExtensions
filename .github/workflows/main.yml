@@ -36,7 +36,7 @@ jobs:
 
       - name: Execute Unit Tests
         if: ${{ success() }}
-        run: dotnet test --no-restore --verbosity normal
+        run: msbuild.exe /t:test "Extension Methods\JExtensions.UnitTest\JExtensions.UnitTest.csproj"
 
   BuildDocumentation:
     # The type of runner that the job will run on
