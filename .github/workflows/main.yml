@@ -34,6 +34,10 @@ jobs:
       - name: Build App
         run: msbuild JExtensions.sln /p:Configuration=Release
 
+      - name: Execute Unit Tests
+        if: ${{ success() }}
+        run: dotnet test --no-restore --verbosity normal
+
   BuildDocumentation:
     # The type of runner that the job will run on
     name: Build Documentation
