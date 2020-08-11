@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JExtensions", "Extension Me
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JExtensions.UnitTest", "Extension Methods\JExtensions.UnitTest\JExtensions.UnitTest.csproj", "{C210D06F-CE53-4C3F-8309-B1DF6738AC10}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JExtensions.Benchmark", "Extension Methods\JExtensions.Benchmark\JExtensions.Benchmark.csproj", "{83C0E367-7445-426C-AF36-A2BCEFC0CF96}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C210D06F-CE53-4C3F-8309-B1DF6738AC10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C210D06F-CE53-4C3F-8309-B1DF6738AC10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C210D06F-CE53-4C3F-8309-B1DF6738AC10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83C0E367-7445-426C-AF36-A2BCEFC0CF96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83C0E367-7445-426C-AF36-A2BCEFC0CF96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83C0E367-7445-426C-AF36-A2BCEFC0CF96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83C0E367-7445-426C-AF36-A2BCEFC0CF96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
