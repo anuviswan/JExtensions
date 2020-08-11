@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JExtensions.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
@@ -7,53 +8,31 @@ namespace JExtensions.UnitTest.Linq
 {
     public class IEnumerableShuffleTests
     {
-        [Fact]
-        public void ShuffleTest_ForValidIntArray_ShouldReturnRandomizedArray()
+        [Theory]
+        [MemberData(nameof(ShuffleTest_ValidScenario_TestData))]
+        public void ShuffleTest_ValidScenario<T>(IEnumerable<T> source,bool isEqual)
         {
-            var inputArray = Enumerable.Range(1, 100);
-            var output = inputArray.Shuffle();
-            Assert.NotEqual(inputArray.ToList(), output.ToList());
+            var result = source.Shuffle();
+            Assert.Equal(isEqual,result.SequenceEqual(source));
         }
 
-        [Fact]
-        public void ShuffleTest_ForRandomArrayWithRepeatedNumbers_ShouldReturnRandomizedArray()
+        public static IEnumerable<object[]> ShuffleTest_ValidScenario_TestData => new []
         {
-            var inputArray = Enumerable.Range(1, 100).Concat(Enumerable.Range(1, 10));
-            var output = inputArray.Shuffle();
-            Assert.NotEqual(inputArray.ToList(), output.ToList());
+            new object[]{ Enumerable.Range(1,100),false},
+            new object[]{ Enumerable.Repeat(1,100),true},
+        };
+
+        [Theory]
+        [MemberData(nameof(ShuffleTest_InvalidScenario_TestData))]
+        public void ShuffleTest_InvalidScenario<T>(IEnumerable<T> source)
+        {
+            Assert.Throws<ArgumentNullException>(()=>source.Shuffle());
         }
 
-
-        [Fact]
-        public void ShuffleTest_ForRandomArrayWithAllNumbersSame_ShouldReturnSameArray()
+        public static IEnumerable<object[]> ShuffleTest_InvalidScenario_TestData => new[]
         {
-            var inputArray = Enumerable.Repeat(1, 100);
-            var output = inputArray.Shuffle();
-            Assert.Equal(inputArray.ToList(), output.ToList());
-        }
+            new object[]{ null},
+        };
 
-        [Fact]
-        public void ShuffleTest_ForSingleElementIntArray_ShouldReturnSameInt()
-        {
-            var inputArray = new[] { new Random().Next(1, 100) };
-            var output = inputArray.Shuffle();
-            Assert.Equal(inputArray.ToList(), output.ToList());
-        }
-
-        [Fact]
-        public void ShuffleTest_ForNullParameter_ShouldThrowArguementNullException()
-        {
-            IList<int> inputArray = null;
-            Assert.Throws<ArgumentNullException>(()=>inputArray.Shuffle());
-        }
-
-
-        [Fact]
-        public void ShuffleTest_EmptyCollection_ShouldReturnEmptyCollection()
-        {
-            var inputArray = Enumerable.Empty<int>();
-            var output = inputArray.Shuffle();
-            Assert.Equal(output, Enumerable.Empty<int>());
-        }
     }
 }

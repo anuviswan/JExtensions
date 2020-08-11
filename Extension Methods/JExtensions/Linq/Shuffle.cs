@@ -12,17 +12,19 @@ namespace JExtensions.Linq
         /// Shuffle a collection
         /// </summary>
         /// <typeparam name="TSource">The type of elements of source.</typeparam>
-        /// <param name="dataArray">The IEnumerable<typeparamref name="TSource"/> which needs to be shuffled</param>
+        /// <param name="source">The IEnumerable<typeparamref name="TSource"/> which needs to be shuffled</param>
         /// <returns>A sequence of elements correspond to those of input sequenced in random order</returns>
-        public static IEnumerable<TSource> Shuffle<TSource>(this IEnumerable<TSource> dataArray)
+        public static IEnumerable<TSource> Shuffle<TSource>(this IEnumerable<TSource> source)
         {
-            var dataArrayList = dataArray.ToList();
+            if (source == null) throw new ArgumentNullException();
+
+            var dataArrayList = source.ToList();
             for (int index = dataArrayList.Count()-1; index > 0; index--)
             {
                 var randomKey = _randomGenerator.Next(1, index);
                 var temp = dataArrayList[randomKey];
-                dataArrayList[randomKey] = dataArrayList[dataArray.Count() - 1];
-                dataArrayList[dataArray.Count() - 1] = temp;
+                dataArrayList[randomKey] = dataArrayList[source.Count() - 1];
+                dataArrayList[source.Count() - 1] = temp;
             }
             return dataArrayList;
         }
