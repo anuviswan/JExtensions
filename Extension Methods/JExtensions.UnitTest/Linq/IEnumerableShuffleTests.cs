@@ -19,7 +19,20 @@ namespace JExtensions.UnitTest.Linq
         public static IEnumerable<object[]> ShuffleTest_ValidScenario_TestData => new []
         {
             new object[]{ Enumerable.Range(1,100),false},
-            new object[]{ Enumerable.Repeat(1,100),false},
+            new object[]{ Enumerable.Repeat(1,100),true},
         };
+
+        [Theory]
+        [MemberData(nameof(ShuffleTest_InvalidScenario_TestData))]
+        public void ShuffleTest_InvalidScenario<T>(IEnumerable<T> source)
+        {
+            Assert.Throws<ArgumentNullException>(()=>source.Shuffle());
+        }
+
+        public static IEnumerable<object[]> ShuffleTest_InvalidScenario_TestData => new[]
+        {
+            new object[]{ null},
+        };
+
     }
 }
