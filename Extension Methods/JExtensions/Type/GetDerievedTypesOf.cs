@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 
 namespace JExtensions
 {
@@ -11,7 +12,7 @@ namespace JExtensions
 
         public static IEnumerable<Type> GetDerievedTypesOf(this Type source, Assembly assembly)
         {
-            return new[] { source };
+            return assembly.GetTypes().Where(x => x.IsAssignableFrom(source));
         }
     }
 }
