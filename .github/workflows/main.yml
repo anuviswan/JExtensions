@@ -35,7 +35,7 @@ jobs:
         run: msbuild JExtensions.sln /p:Configuration=Release
 
       - name: Preparing to create package, authenticating
-        run: dotnet nuget add source https://nuget.pkg.github.com/anuviswan/index.json -n github -u anuviswan -p GH_TOKEN [--b914524634678df28f27f38ba6b32d6891d5a598]
+        run: dotnet nuget add source https://nuget.pkg.github.com/anuviswan/index.json -n github -u anuviswan -p JEXTPACK
 
       - name: Creating Package
         run: dotnet pack --configuration Release
