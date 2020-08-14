@@ -34,6 +34,15 @@ jobs:
       - name: Build App
         run: msbuild JExtensions.sln /p:Configuration=Release
 
+      - name: Preparing to create package, authenticating
+        run: dotnet nuget add source https://nuget.pkg.github.com/anuviswan/index.json -n github -u anuviswan -p GH_TOKEN [--store-password-in-clear-text]
+
+      - name: Creating Package
+        run: dotnet pack --configuration Release
+
+      - name: Pushing to Server
+        run: dotnet nuget push "bin/Release/JExtensions.1.0.0.nupkg" --source "github"
+
       # TODO : Disabled Unit Tests, this needs to be worked out from a separate branch
       # - name: Execute Unit Tests
       #   if: ${{ success() }}
