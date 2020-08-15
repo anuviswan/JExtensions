@@ -42,7 +42,7 @@ jobs:
 
       - name: Publish the package to GitHub packages
         working-directory: .\Extension Methods\JExtensions
-        run: nuget push bin\Debug\*.nupkg -source "github" -SkipDuplicate
+        run: nuget push bin\Release\*.nupkg -source "github" -SkipDuplicate
 
       # TODO : Disabled Unit Tests, this needs to be worked out from a separate branch
       # - name: Execute Unit Tests
