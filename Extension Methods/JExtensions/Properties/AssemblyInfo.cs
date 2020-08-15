@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("HT.Extensions")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("JExtensions")]
+[assembly: AssemblyDescription("A set of unrelated useful extension methods")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("HT.Extensions")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2018")]
+[assembly: AssemblyCompany("Hashtaurus")]
+[assembly: AssemblyProduct("JExtensions")]
+[assembly: AssemblyCopyright("Copyright © Hashtaurus 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
