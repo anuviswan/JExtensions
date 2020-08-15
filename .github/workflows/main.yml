@@ -38,7 +38,7 @@ jobs:
         run: dotnet nuget add source https://nuget.pkg.github.com/anuviswan/index.json -n github -u anuviswan -p JEXTPACK
 
       - name: Nuget SetAPIKey
-        run: nuget setapikey ${{ secrets.JEXTPACK }} -Source "github"
+        run: nuget setapikey ${{ JEXTPACK }} -Source "github"
 
       - name: Publish the package to GitHub packages
         working-directory: .\Extension Methods\JExtensions
