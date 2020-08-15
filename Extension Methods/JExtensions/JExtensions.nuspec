@@ -10,6 +10,7 @@
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/anuviswan/JExtensions</projectUrl>
     <iconUrl>http://icon_url_here_or_delete_this_line/</iconUrl>
+    <repository type="git" url="https://github.com/anuviswan/jextensions" />
     <description>$description$</description>
     <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
     <copyright>Copyright 2020</copyright>
