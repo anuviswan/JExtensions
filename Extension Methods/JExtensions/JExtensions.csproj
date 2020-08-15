@@ -13,6 +13,8 @@
     <LangVersion>8.0</LangVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageOutputPath>bin\Release\</PackageOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
