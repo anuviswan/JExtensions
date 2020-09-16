@@ -38,7 +38,7 @@ jobs:
         run: dotnet pack -c Release -o out
 
       - name: Push generated package to GitHub registry
-        run: nuget push .Extension Methods\JExtensions\bin\Release\*.nupkg -Source "GPR" -SkipDuplicate
+        run: nuget push .\Extension Methods\JExtensions\bin\Release\*.nupkg -Source "GPR" -SkipDuplicate
       # TODO : Disabled Unit Tests, this needs to be worked out from a separate branch
       # - name: Execute Unit Tests
       #   if: ${{ success() }}
