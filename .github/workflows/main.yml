@@ -18,27 +18,31 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
-      - name: Setup .NET Core
-        uses: actions/setup-dotnet@v1
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.0.1
         with:
-          dotnet-version: 2.2.109
+          vs-version: 16.0
 
-      - name: dotnet build
-        run: dotnet build --configuration Release
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1.0.2
 
-      - name: Install NuGet client
-        uses: warrenbuckley/Setup-Nuget@v1
+      - name: Restore NuGet Packages
+        run: nuget restore JExtensions.sln
 
-      - name: Add private GitHub registry to NuGet
-        run: nuget sources add -name "GPR" -Source https://nuget.pkg.github.com/anuviswan/index.json -Username anuviswan -Password ${{ secrets.JEXTPACK }}
+      - name: Build App
+        run: msbuild JExtensions.sln /p:Configuration=Release
 
-      - name: Pack
-        run: dotnet pack -c Release -o out
+      - name: Preparing to create package, authenticating
+        run: dotnet nuget add source https://nuget.pkg.github.com/anuviswan/index.json -n github -u anuviswan -p JEXTPACK
 
-      - name: Push generated package to GitHub registry
-        run: nuget push .\Extension Methods\JExtensions\bin\Release\*.nupkg -Source "GPR" -SkipDuplicate
+      - name: Nuget SetAPIKey
+        run: nuget setapikey ${{ secrets.JEXTPACK }} -Source "github"
+
+      - name: Publish the package to GitHub packages
+        working-directory: .\Extension Methods\JExtensions
+        run: nuget push bin\Release\*.nupkg -source "github" -SkipDuplicate
       # TODO : Disabled Unit Tests, this needs to be worked out from a separate branch
       # - name: Execute Unit Tests
       #   if: ${{ success() }}
