@@ -34,15 +34,18 @@ jobs:
       - name: Build App
         run: msbuild JExtensions.sln /p:Configuration=Release
 
-      - name: Preparing to create package, authenticating
-        run: dotnet nuget add source https://nuget.pkg.github.com/anuviswan/index.json -n github -u anuviswan -p secrets.JEXTPACK
+      - uses: actions/setup-dotnet@v1.5.0
+        with:
+          dotnet-version: "3.1.x" # SDK Version to use.
+          source-url: https://nuget.pkg.github.com/anuviswan/index.json
+        env:
+          NUGET_AUTH_TOKEN: "%NUGET_AUTH_TOKEN%"
 
-      - name: Nuget SetAPIKey
-        run: nuget setapikey ${{ secrets.JEXTPACK }} -Source "github"
-
-      - name: Publish the package to GitHub packages
+      - name: Publish the package to GPR
         working-directory: .\Extension Methods\JExtensions
-        run: nuget push bin\Release\*.nupkg -source "github" -SkipDuplicate
+        run: dotnet nuget push bin\Release\*.nupkg
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.JEXTPACK }}
       # TODO : Disabled Unit Tests, this needs to be worked out from a separate branch
       # - name: Execute Unit Tests
       #   if: ${{ success() }}
