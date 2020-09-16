@@ -33,3 +33,12 @@ Determines if the sequence is sorted in decreasing/descending order
 
 **Shuffle**
 Shuffle a collection
+
+**ContainsExactly**
+Determines if the sequences contains exactly n elements
+
+**ContainsAtmost**
+Determines if the collection containst atmost n elements
+
+**ContainsAtleast**
+Determines if the collection contains atleast n elements
