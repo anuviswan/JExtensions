@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DateTimeTests\IsWeekendTests.cs" />
+    <Compile Include="Linq\IEnumerableContainsAtleastTests.cs" />
+    <Compile Include="Linq\IEnumerableContainsAtmostTests.cs" />
+    <Compile Include="Linq\IEnumerableContainsExactlyTests.cs" />
     <Compile Include="Linq\IEnumerableIsDecreasingTests.cs" />
     <Compile Include="Linq\IEnumerableIsIncreasingTests.cs" />
     <Compile Include="Linq\IEnumerableShuffleTests.cs" />
