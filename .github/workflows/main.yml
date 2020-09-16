@@ -35,7 +35,7 @@ jobs:
         run: msbuild JExtensions.sln /p:Configuration=Release
 
       - name: Preparing to create package, authenticating
-        run: dotnet nuget add source https://nuget.pkg.github.com/anuviswan/index.json -n github -u anuviswan -p JEXTPACK
+        run: dotnet nuget add source https://nuget.pkg.github.com/anuviswan/index.json -n github -u anuviswan -p secrets.JEXTPACK
 
       - name: Nuget SetAPIKey
         run: nuget setapikey ${{ secrets.JEXTPACK }} -Source "github"
