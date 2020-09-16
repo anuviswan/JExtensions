@@ -37,7 +37,7 @@ jobs:
         run: msbuild JExtensions.sln /p:Configuration=Release
 
       - name: Push generated package to GitHub registry
-        run: dotnet nuget push ./<project>/out/*.nupkg --skip-duplicate --no-symbols true
+        run: dotnet nuget push .\Extension Methods\JExtensions\bin\Release\*.nupkg --skip-duplicate --no-symbols true
 
       - name: Publish the package to GitHub packages
         working-directory: .\Extension Methods\JExtensions
