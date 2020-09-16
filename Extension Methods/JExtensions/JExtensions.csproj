@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="DateTime\IsWeekend.cs" />
     <Compile Include="Linq\ContainsAtleast.cs" />
+    <Compile Include="Linq\ContainsAtmost.cs" />
     <Compile Include="Linq\ContainsExactly.cs" />
     <Compile Include="Linq\IsDecreasing.cs" />
     <Compile Include="Linq\IsIncreasing.cs" />

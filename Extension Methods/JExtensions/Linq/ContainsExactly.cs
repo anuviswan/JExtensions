@@ -9,7 +9,7 @@ namespace JExtensions.Linq
         /// Determines if the sequences contains exactly n elements as specified by the <paramref name="numberOfItems"/> parameter
         /// </summary>
         /// <typeparam name="TSource">Types of elements in <code>source</code></typeparam>
-        /// <param name="source">An <code>IEnumerable<T></code> to check for number of elements</param>
+        /// <param name="source">An <code>IEnumerable<TSource></code> to check for number of elements</param>
         /// <param name="numberOfItems">Expected number of elements</param>
         /// <returns>Returns true if the number of elements matches of the <paramref name="numberOfItems"/>.Otherwise false.</returns>
         public static bool ContainsExactly<TSource>(this IEnumerable<TSource> source,int numberOfItems)
