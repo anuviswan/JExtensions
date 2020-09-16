@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace JExtensions.Linq
 {
     public static partial class EnumerableExtensions
     {
+        /// <summary>
+        /// Determines if the sequences contains exactly n elements as specified by the <paramref name="numberOfItems"/> parameter
+        /// </summary>
+        /// <typeparam name="TSource">Types of elements in `source`</typeparam>
+        /// <param name="source">An IEnumerable<T> to check for number of elements</param>
+        /// <param name="numberOfItems">Expected number of elements</param>
+        /// <returns>Returns true if the number of elements matches of the <paramref name="numberOfItems"/>.Otherwise false.</returns>
         public static bool ContainsExactly<TSource>(this IEnumerable<TSource> source,int numberOfItems)
         {
             if(source is null) throw new ArgumentNullException();
