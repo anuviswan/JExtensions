@@ -34,18 +34,11 @@ jobs:
       - name: Build App
         run: msbuild JExtensions.sln /p:Configuration=Release
 
-      - uses: actions/setup-dotnet@v1.5.0
+      - name: Publish
+        uses: brandedoutcast/publish-nuget@v2.5.2
         with:
-          dotnet-version: "3.1.x" # SDK Version to use.
-          source-url: https://nuget.pkg.github.com/anuviswan/index.json
-        env:
-          NUGET_AUTH_TOKEN: ${{ secrets.JEXTPACK }}
-
-      - name: Publish the package to GPR
-        working-directory: .\Extension Methods\JExtensions
-        run: dotnet nuget push bin\Release\*.nupkg
-        env:
-          NUGET_AUTH_TOKEN: ${{ secrets.JEXTPACK }}
+          PROJECT_FILE_PATH: .\Extension Methods\JExtensions\JExtensions.csproj
+          NUGET_KEY: ${{secrets.JEXTPACK}}
       # TODO : Disabled Unit Tests, this needs to be worked out from a separate branch
       # - name: Execute Unit Tests
       #   if: ${{ success() }}
