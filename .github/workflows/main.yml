@@ -37,7 +37,7 @@ jobs:
       - name: Publish
         uses: brandedoutcast/publish-nuget@v2.5.2
         with:
-          PROJECT_FILE_PATH: '.\Extension Methods\JExtensions\JExtensions.csproj'
+          PROJECT_FILE_PATH: "./Extension Methods/JExtensions/JExtensions.csproj"
           NUGET_KEY: ${{secrets.JEXTPACK}}
       # TODO : Disabled Unit Tests, this needs to be worked out from a separate branch
       # - name: Execute Unit Tests
