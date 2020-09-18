@@ -39,7 +39,7 @@ jobs:
           CONTEXT: ${{ toJson(github) }}
           SECRETS: ${{ toJson(secrets) }}
           TOK: ${{ secrets.JEXTPACK }}
-          TEST: ${{ secrets.TEST }
+          TEST: ${{ secrets.TEST }}
         run: |
           echo $ACCESS_TOKEN
           echo $TOK
