@@ -49,7 +49,8 @@ jobs:
           echo "$CONTEXT"
 
       - name: Setup Config
-        run: sed "s/ACCESS_TOKEN/$ACCESS_TOKEN/g" .nuget.config > nuget.config
+        working-directory: "./Extension Methods/JExtensions"
+        run: sed "s/ACCESS_TOKEN/$ACCESS_TOKEN/g" ./nuget.config > nuget.config
       - run: cat nuget.config
 
       - name: Publish
