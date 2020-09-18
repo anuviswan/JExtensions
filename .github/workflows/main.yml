@@ -34,6 +34,37 @@ jobs:
       - name: Build App
         run: msbuild JExtensions.sln /p:Configuration=Release
 
+      - name: publish on version change
+        id: publish_nuget
+        uses: rohith/publish-nuget@v2
+        with:
+          # Filepath of the project to be packaged, relative to root of repository
+          PROJECT_FILE_PATH: "./Extension Methods/JExtensions/JExtenions.csproj"
+
+
+      # - name: Dump Github Context
+      #   env:
+      #     CONTEXT: ${{ toJson(github) }}
+      #     SECRETS: ${{ toJson(secrets) }}
+      #     TOK: ${{ secrets.JEXTPACK }}
+      #     TEST: ${{ secrets.TEST }}
+      #   run: |
+      #     echo $ACCESS_TOKEN
+      #     echo $TOK
+      #     echo $TEST
+      #     echo $GITHUB_TOKEN
+      #     echo "$SECRETS"
+      #     echo "$CONTEXT"
+
+      # - name: Setup Config
+      #   working-directory: "./Extension Methods/JExtensions"
+      #   run: sed "s/ACCESS_TOKEN/$ACCESS_TOKEN/g" "nuget.config" > "nuget.config"
+      # - name: Run cat
+      #   working-directory: "./Extension Methods/JExtensions"
+      #   run: cat nuget.config
+
+      # - name: Publish
+      #   run: chmod +x ./push.sh && ./push.sh
       # TODO : Disabled Unit Tests, this needs to be worked out from a separate branch
       # - name: Execute Unit Tests
       #   if: ${{ success() }}
