@@ -34,11 +34,26 @@ jobs:
       - name: Build App
         run: msbuild JExtensions.sln /p:Configuration=Release
 
+      - name: Dump Github Context
+        env:
+          CONTEXT: ${{ toJson(github) }}
+          SECRETS: ${{ toJson(secrets) }}
+          TOK: ${{ secrets.JEXTPACK }}
+          TEST: ${{ secrets.TEST }
+        run: |
+          echo $ACCESS_TOKEN
+          echo $TOK
+          echo $TEST
+          echo $GITHUB_TOKEN
+          echo "$SECRETS"
+          echo "$CONTEXT"
+
+      - name: Setup Config
+        run: sed "s/ACCESS_TOKEN/$ACCESS_TOKEN/g" .nuget.config > nuget.config
+      - run: cat nuget.config
+
       - name: Publish
-        uses: brandedoutcast/publish-nuget@v2.5.2
-        with:
-          PROJECT_FILE_PATH: "./Extension Methods/JExtensions/JExtensions.csproj"
-          NUGET_KEY: ${{secrets.JEXTPACK}}
+        run: chmod +x ./push.sh && ./push.sh
       # TODO : Disabled Unit Tests, this needs to be worked out from a separate branch
       # - name: Execute Unit Tests
       #   if: ${{ success() }}
