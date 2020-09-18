@@ -51,7 +51,9 @@ jobs:
       - name: Setup Config
         working-directory: "./Extension Methods/JExtensions"
         run: sed "s/ACCESS_TOKEN/$ACCESS_TOKEN/g" "nuget.config" > "nuget.config"
-      - run: cat nuget.config
+      - name: Run cat
+        working-directory: "./Extension Methods/JExtensions"
+        run: cat nuget.config
 
       - name: Publish
         run: chmod +x ./push.sh && ./push.sh
