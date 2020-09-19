@@ -13,31 +13,20 @@ jobs:
   BuildLibrary:
     name: Build Library
     # The type of runner that the job will run on
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      - name: Add msbuild to PATH
-        uses: microsoft/setup-msbuild@v1.0.1
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
         with:
-          vs-version: 16.0
-
-      - name: Setup NuGet
-        uses: NuGet/setup-nuget@v1.0.2
-
-      - name: Restore NuGet Packages
-        run: nuget restore JExtensions.sln
-
-      - name: Build App
-        run: msbuild JExtensions.sln /p:Configuration=Release
-
-      # TODO : Disabled Unit Tests, this needs to be worked out from a separate branch
-      # - name: Execute Unit Tests
-      #   if: ${{ success() }}
-      #   run: msbuild.exe /t:test "Extension Methods\JExtensions.UnitTest\JExtensions.UnitTest.csproj"
+          dotnet-version: "3.1.x"
+      - name: Build Web Api
+        run: dotnet build --configuration Release
+      - name: Execute Unit Tests
+        if: ${{ success() }}
+        run: dotnet test --no-restore --verbosity normal
 
   BuildDocumentation:
     # The type of runner that the job will run on
