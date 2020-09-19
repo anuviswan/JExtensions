@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JExtensions", "Extension Methods\JExtensions\JExtensions.csproj", "{AA224927-31D2-411C-97C1-B78742E7BB5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JExtensions", "src\JExtensions\JExtensions.csproj", "{297614A3-FE52-48B7-870A-24A3DCD05175}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JExtensions.UnitTest", "Extension Methods\JExtensions.UnitTest\JExtensions.UnitTest.csproj", "{C210D06F-CE53-4C3F-8309-B1DF6738AC10}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JExtensions.UnitTests", "src\JExtensions.UnitTests\JExtensions.UnitTests.csproj", "{AD9488E4-750C-48E5-B454-1B96F38E6A9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JExtensions.Benchmark", "Extension Methods\JExtensions.Benchmark\JExtensions.Benchmark.csproj", "{83C0E367-7445-426C-AF36-A2BCEFC0CF96}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JExtensions.BenchmarkTests", "src\JExtensions.BenchmarkTests\JExtensions.BenchmarkTests.csproj", "{531E7864-2210-4AB6-B254-3720B6B4E1AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AA224927-31D2-411C-97C1-B78742E7BB5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AA224927-31D2-411C-97C1-B78742E7BB5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AA224927-31D2-411C-97C1-B78742E7BB5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AA224927-31D2-411C-97C1-B78742E7BB5B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C210D06F-CE53-4C3F-8309-B1DF6738AC10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C210D06F-CE53-4C3F-8309-B1DF6738AC10}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C210D06F-CE53-4C3F-8309-B1DF6738AC10}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C210D06F-CE53-4C3F-8309-B1DF6738AC10}.Release|Any CPU.Build.0 = Release|Any CPU
-		{83C0E367-7445-426C-AF36-A2BCEFC0CF96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{83C0E367-7445-426C-AF36-A2BCEFC0CF96}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{83C0E367-7445-426C-AF36-A2BCEFC0CF96}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{83C0E367-7445-426C-AF36-A2BCEFC0CF96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{297614A3-FE52-48B7-870A-24A3DCD05175}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{297614A3-FE52-48B7-870A-24A3DCD05175}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{297614A3-FE52-48B7-870A-24A3DCD05175}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{297614A3-FE52-48B7-870A-24A3DCD05175}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD9488E4-750C-48E5-B454-1B96F38E6A9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD9488E4-750C-48E5-B454-1B96F38E6A9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD9488E4-750C-48E5-B454-1B96F38E6A9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD9488E4-750C-48E5-B454-1B96F38E6A9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{531E7864-2210-4AB6-B254-3720B6B4E1AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{531E7864-2210-4AB6-B254-3720B6B4E1AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{531E7864-2210-4AB6-B254-3720B6B4E1AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{531E7864-2210-4AB6-B254-3720B6B4E1AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
