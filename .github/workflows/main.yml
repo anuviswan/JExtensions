@@ -16,17 +16,18 @@ jobs:
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: "3.1.x"
-        #   source-url: https://nuget.pkg.github.com/anuviswan/index.json
-        # env:
-        #   NUGET_AUTH_TOKEN: ${{secrets.JEXTPACK}}
-      - name: Build JExtensions Library
+      - name: Build Web Api
         run: dotnet build --configuration Release
+      - name: Execute Unit Tests
+        if: ${{ success() }}
+        run: dotnet test --no-restore --verbosity normal
       # - name: Execute Unit Tests
       #   if: ${{ success() }}
       #   run: dotnet test --no-restore --verbosity normal
