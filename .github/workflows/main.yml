@@ -28,11 +28,9 @@ jobs:
       - name: Execute Unit Tests
         if: ${{ success() }}
         run: dotnet test --no-restore --verbosity normal
-      # - name: Execute Unit Tests
-      #   if: ${{ success() }}
-      #   run: dotnet test --no-restore --verbosity normal
-      # - name: Pack Nuget
-      #   run: dotnet pack --configuration Release
+
+      - name: Pack Nuget
+        run: dotnet pack --configuration Release
       # - name: Publish Nuget
       #   run: dotnet nuget push "src/JExtensions/bin/Release/*.nupkg"
 
