@@ -31,8 +31,11 @@ jobs:
 
       - name: Pack Nuget
         run: dotnet pack --configuration Release
-      # - name: Publish Nuget
-      #   run: dotnet nuget push "src/JExtensions/bin/Release/*.nupkg"
+
+      - name: Add Nuget Source
+        run: dotnet nuget add source --username anuviswan --password 0cb86cf113342ddcd21a230ac099d3152f5f94bd --name github https://nuget.pkg.github.com/anuviswan/index.json
+      - name: Publish Nuget
+        run: dotnet nuget push --source github "./src/JExtensions/bin/Release/*.nupkg"
 
   BuildDocumentation:
     # The type of runner that the job will run on
