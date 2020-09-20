@@ -25,7 +25,7 @@ jobs:
           source-url: https://nuget.pkg.github.com/anuviswan/index.json
         env:
           NUGET_AUTH_TOKEN: ${{secrets.JEXTPACK}}
-      - name: Build Library
+      - name: Build JExtensions Library
         run: dotnet build --configuration Release
       # - name: Execute Unit Tests
       #   if: ${{ success() }}
