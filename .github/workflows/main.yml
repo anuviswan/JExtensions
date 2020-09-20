@@ -39,7 +39,7 @@ jobs:
       - name: PushGithub
         run: dotnet nuget push *.nupkg --no-symbols --skip-duplicate
         env:
-          NUGET_AUTH_TOKEN: ${{ github.JEXTPACK }}
+          NUGET_AUTH_TOKEN: ${{ github.GITHUB_TOKEN }}
 
       # - name: Add Nuget Source
       #   run: dotnet nuget add source --username anuviswan --password  --store-password-in-clear-text --name github https://nuget.pkg.github.com/anuviswan/index.json
