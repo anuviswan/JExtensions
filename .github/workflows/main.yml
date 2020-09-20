@@ -22,7 +22,10 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: "3.1.x"
-      - name: Build Web Api
+          source-url: https://nuget.pkg.github.com/<organization>/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{secrets.JEXTPACK}}
+      - name: Build Library
         run: dotnet build --configuration Release
       - name: Execute Unit Tests
         if: ${{ success() }}
@@ -30,7 +33,7 @@ jobs:
       - name: Pack Nuget
         run: dotnet pack --configuration Release
       - name: Publish Nuget
-        run: dotnet nuget push "src/JExtensions/bin/Release/JExtensions.1.0.0.nupkg" --source "github"
+        run: dotnet nuget push "src/JExtensions/bin/Release/*.nupkg" --source "github"
 
   BuildDocumentation:
     # The type of runner that the job will run on
