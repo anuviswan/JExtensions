@@ -27,6 +27,10 @@ jobs:
       - name: Execute Unit Tests
         if: ${{ success() }}
         run: dotnet test --no-restore --verbosity normal
+      - name: Pack Nuget
+        run: dotnet pack --configuration Release
+      - name: Publish Nuget
+        run: dotnet nuget push "src/JExtensions/bin/Release/JExtensions.1.0.0.nupkg" --source "github"
 
   BuildDocumentation:
     # The type of runner that the job will run on

@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Authors>Anu Viswan</Authors>
+    <Description>HashTaurus</Description>
   </PropertyGroup>
 
 </Project>
