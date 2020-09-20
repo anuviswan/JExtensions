@@ -27,13 +27,13 @@ jobs:
           NUGET_AUTH_TOKEN: ${{secrets.JEXTPACK}}
       - name: Build Library
         run: dotnet build --configuration Release
-      - name: Execute Unit Tests
-        if: ${{ success() }}
-        run: dotnet test --no-restore --verbosity normal
-      - name: Pack Nuget
-        run: dotnet pack --configuration Release
-      - name: Publish Nuget
-        run: dotnet nuget push "src/JExtensions/bin/Release/*.nupkg"
+      # - name: Execute Unit Tests
+      #   if: ${{ success() }}
+      #   run: dotnet test --no-restore --verbosity normal
+      # - name: Pack Nuget
+      #   run: dotnet pack --configuration Release
+      # - name: Publish Nuget
+      #   run: dotnet nuget push "src/JExtensions/bin/Release/*.nupkg"
 
   BuildDocumentation:
     # The type of runner that the job will run on
