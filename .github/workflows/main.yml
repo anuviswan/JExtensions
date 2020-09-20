@@ -18,33 +18,40 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: "3.1.200"
-          source-url: https://nuget.pkg.github.com/anuviswan/index.json
-        env:
-          NUGET_AUTH_TOKEN: "%NUGET_AUTH_TOKEN%"
-
-      - name: Build Web Api
+          dotnet-version: 3.0.200
+      - name: Build with dotnet
         run: dotnet build --configuration Release
-      - name: Execute Unit Tests
-        if: ${{ success() }}
-        run: dotnet test --no-restore --verbosity normal
-
-      - name: Pack Nuget
-        run: dotnet pack --configuration Release
-
-      - name: PushGithub
-        run: dotnet nuget push *.nupkg --no-symbols --skip-duplicate
-        env:
-          NUGET_AUTH_TOKEN: ${{ secrets.JEXTPACK }}
-
-      # - name: Add Nuget Source
-      #   run: dotnet nuget add source --username anuviswan --password  --store-password-in-clear-text --name github https://nuget.pkg.github.com/anuviswan/index.json
-      # - name: Publish Nuget
-      #   run: dotnet nuget push --source github "./src/JExtensions/bin/Release/*.nupkg"
+    # - name: Setup nuget config
+    #   run: sed 's/GITHUB_TOKEN/${{ secrets.JEXTPACK }}/g' .nuget.config > nuget.config
+    # - name: Publish nuget
+    #   run: dotnet nuget push src/bin/Release/*.nupkg -s "github"
+    # - uses: actions/checkout@v2
+    # - name: Setup .NET Core
+    #   uses: actions/setup-dotnet@v1
+    #   with:
+    #     dotnet-version: "3.1.200"
+    #     source-url: https://nuget.pkg.github.com/anuviswan/index.json
+    #   env:
+    #     NUGET_AUTH_TOKEN: "%NUGET_AUTH_TOKEN%"
+    # - name: Build Web Api
+    #   run: dotnet build --configuration Release
+    # - name: Execute Unit Tests
+    #   if: ${{ success() }}
+    #   run: dotnet test --no-restore --verbosity normal
+    # - name: Pack Nuget
+    #   run: dotnet pack --configuration Release
+    # - name: PushGithub
+    #   run: dotnet nuget push *.nupkg --no-symbols --skip-duplicate
+    #   env:
+    #     NUGET_AUTH_TOKEN: ${{ secrets.JEXTPACK }}
+    # - name: Add Nuget Source
+    #   run: dotnet nuget add source --username anuviswan --password  --store-password-in-clear-text --name github https://nuget.pkg.github.com/anuviswan/index.json
+    # - name: Publish Nuget
+    #   run: dotnet nuget push --source github "./src/JExtensions/bin/Release/*.nupkg"
 
   BuildDocumentation:
     # The type of runner that the job will run on
