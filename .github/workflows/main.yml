@@ -22,9 +22,9 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: "3.1.x"
-          source-url: https://nuget.pkg.github.com/anuviswan/index.json
-        env:
-          NUGET_AUTH_TOKEN: ${{secrets.JEXTPACK}}
+        #   source-url: https://nuget.pkg.github.com/anuviswan/index.json
+        # env:
+        #   NUGET_AUTH_TOKEN: ${{secrets.JEXTPACK}}
       - name: Build JExtensions Library
         run: dotnet build --configuration Release
       # - name: Execute Unit Tests
