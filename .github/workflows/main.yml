@@ -28,7 +28,7 @@ jobs:
       - name: Pack Nuget
         run: dotnet pack --configuration Release
       - name: Publish nuget
-        run: dotnet nuget push ./src/JExtensions/bin/Release/*.nupkg -s "github"
+        run: dotnet nuget push ./src/JExtensions/bin/Release/JExtensions.1.0.0.nupkg -s "github"
     # - name: Setup nuget config
     #   run: sed 's/GITHUB_TOKEN/${{ secrets.JEXTPACK }}/g' .nuget.config > nuget.config
     # - name: Publish nuget
