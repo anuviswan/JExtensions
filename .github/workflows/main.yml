@@ -25,6 +25,8 @@ jobs:
           dotnet-version: 3.1.200
       - name: Build with dotnet
         run: dotnet build --configuration Release
+      - name: Publish nuget
+        run: dotnet nuget push src/bin/Release/*.nupkg -s "github"
     # - name: Setup nuget config
     #   run: sed 's/GITHUB_TOKEN/${{ secrets.JEXTPACK }}/g' .nuget.config > nuget.config
     # - name: Publish nuget
