@@ -25,18 +25,24 @@ jobs:
           dotnet-version: 3.1.200
       - name: Build with dotnet
         run: dotnet build --configuration Release
+      - name: Execute Unit Tests
+        if: ${{ success() }}
+        run: dotnet test --no-restore --verbosity normal
       - name: Pack Nuget
+        if: ${{ success() }}
         run: dotnet pack --configuration Release
-      - name: Setup nuget config
-        run: sed 's/GITHUB_TOKEN/${{ secrets.GITHUB_TOKEN }}/g' ./src/JExtensions/nuget.config > ./src/JExtensions/nuget.config
-      - name: Add GPR Source
-        run: nuget sources add -name "GPR" -Source https://nuget.pkg.github.com/anuviswan/index.json -Username anuviswan -Password ${{ secrets.GITHUB_TOKEN }}
-      - uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
+      # - name: Setup nuget config
+      #   run: sed 's/GITHUB_TOKEN/${{ secrets.GITHUB_TOKEN }}/g' ./src/JExtensions/nuget.config > ./src/JExtensions/nuget.config
+      # - name: Add GPR Source
+      #   run: nuget sources add -name "GPR" -Source https://nuget.pkg.github.com/anuviswan/index.json -Username anuviswan -Password ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish
+        if: ${{ success() }}
+        uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
         with:
-          nupkg-path:  './src/JExtensions/bin/Release/JExtensions.1.0.0.nupkg'
-          repo-owner:  'anuviswan'
-          gh-user:  'anuviswan'
-          token:  ${{ secrets.GITHUB_TOKEN }}        
+          nupkg-path: './src/JExtensions/bin/Release/JExtensions.1.0.0.nupkg'
+          repo-owner: 'anuviswan'
+          gh-user: 'anuviswan'
+          token: ${{ secrets.GITHUB_TOKEN }}
     #  - name: Publish nuget
     #    run: dotnet nuget push ./src/JExtensions/bin/Release/JExtensions.1.0.0.nupkg -s https://nuget.pkg.github.com/anuviswan/index.json
     #    env:
