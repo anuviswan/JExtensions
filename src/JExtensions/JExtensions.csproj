@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Authors>Anu Viswan</Authors>
+    <Authors>anuviswan</Authors>
     <Description>HashTaurus</Description>
     <RepositoryUrl>https://github.com/anuviswan/JExtensions</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
