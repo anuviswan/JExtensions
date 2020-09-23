@@ -16,17 +16,30 @@ jobs:
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: "3.1.x"
-      - name: Build Web Api
+          dotnet-version: 3.1.200
+      - name: Build with dotnet
         run: dotnet build --configuration Release
       - name: Execute Unit Tests
         if: ${{ success() }}
         run: dotnet test --no-restore --verbosity normal
+      - name: Pack Nuget
+        if: ${{ success() }}
+        run: dotnet pack --configuration Release
+      - name: Publish
+        if: ${{ success() }}
+        uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
+        with:
+          nupkg-path: './src/JExtensions/bin/Release/JExtensions.1.0.0.nupkg'
+          repo-owner: 'anuviswan'
+          gh-user: 'anuviswan'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          skip-duplicate: 'false'
 
   BuildDocumentation:
     # The type of runner that the job will run on
