@@ -31,10 +31,16 @@ jobs:
         run: sed 's/GITHUB_TOKEN/${{ secrets.GITHUB_TOKEN }}/g' ./src/JExtensions/nuget.config > ./src/JExtensions/nuget.config
       - name: Add GPR Source
         run: nuget sources add -name "GPR" -Source https://nuget.pkg.github.com/anuviswan/index.json -Username anuviswan -Password ${{ secrets.GITHUB_TOKEN }}
-      - name: Publish nuget
-        run: dotnet nuget push ./src/JExtensions/bin/Release/JExtensions.1.0.0.nupkg -s https://nuget.pkg.github.com/anuviswan/index.json
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
+        with:
+          nupkg-path:  './src/JExtensions/bin/Release/JExtensions.1.0.0.nupkg'
+          repo-owner:  'anuviswan'
+          gh-user:  'anuviswan'
+          token:  ${{ secrets.GITHUB_TOKEN }}        
+    #  - name: Publish nuget
+    #    run: dotnet nuget push ./src/JExtensions/bin/Release/JExtensions.1.0.0.nupkg -s https://nuget.pkg.github.com/anuviswan/index.json
+    #    env:
+    #      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     # - name: Setup nuget config
     #   run: sed 's/GITHUB_TOKEN/${{ secrets.JEXTPACK }}/g' .nuget.config > nuget.config
     # - name: Publish nuget
