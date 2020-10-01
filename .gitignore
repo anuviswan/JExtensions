@@ -260,3 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 
+/Extension Methods/JExtensions.Benchmark/BenchmarkDotNet.Artifacts/results
