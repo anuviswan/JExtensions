@@ -6,6 +6,7 @@
     <Description>HashTaurus</Description>
     <RepositoryUrl>https://github.com/anuviswan/JExtensions</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <Version>1.0.0.100</Version>
   </PropertyGroup>
 
 </Project>
