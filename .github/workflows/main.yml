@@ -16,7 +16,6 @@ jobs:
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v1
       - name: Setup .NET Core
@@ -35,7 +34,7 @@ jobs:
         if: ${{ success() }}
         uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
         with:
-          nupkg-path: './src/JExtensions/bin/Release/JExtensions.1.0.0.nupkg'
+          nupkg-path: './src/JExtensions/bin/Release/*.nupkg'
           repo-owner: 'anuviswan'
           gh-user: 'anuviswan'
           token: ${{ secrets.GITHUB_TOKEN }}
