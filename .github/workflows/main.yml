@@ -30,15 +30,11 @@ jobs:
       - name: Pack Nuget
         if: ${{ success() }}
         run: dotnet pack --configuration Release
-      - name: Publish
-        if: ${{ success() }}
-        uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
+      - name: Publish JExtensions
+        uses: brandedoutcast/publish-nuget@v2.5.2
         with:
-          nupkg-path: './src/JExtensions/bin/Release/*.nupkg'
-          repo-owner: 'anuviswan'
-          gh-user: 'anuviswan'
-          token: ${{ secrets.GITHUB_TOKEN }}
-          skip-duplicate: 'false'
+          PROJECT_FILE_PATH: src/JExtensions/JExtensions.csproj
+          NUGET_KEY: ${{secrets.JEXTPACK}}
 
   BuildDocumentation:
     # The type of runner that the job will run on
