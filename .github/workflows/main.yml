@@ -59,9 +59,3 @@ jobs:
           build_dir: docfx_project/_site
         env:
           GITHUB_TOKEN: ${{ secrets.JEXTDOC }}
-      # - name: Deploy
-      #   uses: JamesIves/github-pages-deploy-action@3.5.9
-      #   with:
-      #     GITHUB_TOKEN: ${{ secrets.JEXTDOC }}
-      #     BRANCH: gh-pages # The branch the action should deploy to.
-      #     FOLDER: _site # The folder the action should deploy.
